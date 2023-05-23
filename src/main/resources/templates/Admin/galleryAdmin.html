@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>صور المؤسسة</title>
+
+<link href="css1/bootstrap.min1.css" rel="stylesheet">
+<link href="css1/bootstrap-rtl.min.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="css1/animate1.css" rel="stylesheet">
+<link href="css1/plugins/dropzone/basic.css" rel="stylesheet">
+<link href="css1/plugins/dropzone/dropzone.css" rel="stylesheet">
+<link href="css1/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+<link href="css1/plugins/codemirror/codemirror.css" rel="stylesheet">
+<link href="css1/style1.css" rel="stylesheet">
+<style>
+ .disactivated{
+   filter: blur(3px);
+ }
+ .newsDisactive{
+ text-decoration: line-through;
+ color:#dc3545;
+ }
+ .alert-danger{
+ height: 40px;
+ align-content: center;
+ }
+ .colr{
+ color:red;
+ }
+</style>
+</head>
+
+<body class="rtls">
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img1/fmj.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">FMJ</span>
+                                <span class="text-muted text-xs block">fondation <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                <li><a class="dropdown-item" th:href="@{/mailbox}">Mailbox</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" th:href="@{/home.html}">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            FMJ
+                        </div>
+                    </li>
+                    <li>
+                        <a th:href="@{/index}" href=""><i class="fa fa-home"></i> <span class="nav-label">الرئيسية</span></a>
+                    </li>
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">الخدمات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a th:href="@{/hebergementAdmin}">السكن</a></li>
+                            <li><a href="#" >الصحة</a></li>
+                            <li><a th:href="@{/transportAdmin}">النقل</a></li>
+							<li><a href="#">القروض </a></li>
+							<li><a href="#">المنح</a></li>
+							<li><a href="#"> العمرة</a></li>
+                            <li><a href="#" >التأمين</a></li>
+                            <li><a href="#" >الإصطياف</a></li>
+                            <li><a href="#" >الترفيه</a></li>
+                        </ul>
+                    </li>
+                    
+                     <li class=" ">
+                        <a href="#"><i class="fa fa-building"></i>  <span class="nav-label">المؤسسة</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#">النشأة</a></li>
+                            <li><a href="#" >المهام</a></li>
+                            <li><a href="#">الأهداف والقيم</a></li>
+							<li><a href="#">شركاءنا</a></li>
+                        </ul>
+                    </li>
+                      <li class=" ">
+                        <a href="#"><i class="fa fa-briefcase"></i><span class="nav-label">الإدارة</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#">كلمة المدير العام</a></li>
+                            <li><a href="#" >النصوص القانونية</a></li>
+                            <li><a href="#"> الهياكل التنظيمية</a></li>
+                        </ul>
+                    </li>
+                    
+                     <li class=" ">
+                        <a href="#"><i class="fa fa-sitemap"></i><span class="nav-label">الفروع</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#"> المدن </a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class="active">
+                        <a href="#"><i class="fa fa-archive"></i><span class="nav-label">البيانات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#"> الصحافة</a></li>
+                            <li class="active"><a th:href="@{/galleryAdmin}" > معرض الصور</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a th:href="@{/videoAdmin}" ><i class="fa fa-camera"></i><span class="nav-label">فيديوهات</span></a>
+                    </li>
+                    
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-paper-plane"></i><span class="nav-label">المنشورات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a th:href="@{/publicationAdmin}">طلبات العروض</a></li>
+                            <li><a th:href="@{/manachirAdmin}" >مناشير</a></li>
+                            <li><a th:href="@{/publication3Admin}">إعلانات</a></li>
+							<li><a href="#">تساؤلات</a></li>
+							<li><a th:th="@{/mailbox}">شكاوي</a></li>
+                        </ul>
+                    </li>
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">التواصل</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a th:href="@{/mailbox}"> الرسائل و الشكايات</a></li>
+   
+							<li><a th:th="@{/mail_compose}">ارسال رسالة</a></li>
+                        </ul>
+                    </li>
+                 </ul>  
+            </div>
+        </nav>
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom"
+							action="search_results.html">
+							<div class="form-group">
+								<input type="text" placeholder="ابحث عن شيء ما..."
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><span class="m-r-sm text-muted welcome-message">مرحبا
+								بكم</span></li>
+						<li class="dropdown"><a class="dropdown-toggle count-info"
+							data-toggle="dropdown" href="#"> <i class="fa fa-envelope"></i>
+								<span class="label label-warning">16</span>
+						</a>
+							<ul class="dropdown-menu dropdown-messages">
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/a7.jpg">
+										</a>
+										<div class="media-body">
+											<small class="float-right">قبل 46 ساعة</small> <strong>Mike
+												Loreipsum</strong> بدأ المتابعة <strong>Monica Smith</strong>. <br>
+											<small class="text-muted">قبل 3 أيام في الساعة 7:58
+												مساءً - 10.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/a4.jpg">
+										</a>
+										<div class="media-body ">
+											<small class="float-right text-navy">قبل 5 ساعات</small> <strong>Chris
+												Johnatan Overtunk</strong>بدأ المتابعة<strong>Monica Smith</strong>.
+											<br> <small class="text-muted">أمس 1:21 مساءً -
+												11.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/profile.jpg">
+										</a>
+										<div class="media-body ">
+											<small class="float-right">قبل 23 ساعة</small> <strong>Monica
+												Smith</strong> اعجب <strong>Kim Smith</strong>. <br> <small
+												class="text-muted">قبل يومين الساعة 2:30 ص -
+												11.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="text-center link-block">
+										<a href="mailbox.html" class="dropdown-item"> <i
+											class="fa fa-envelope"></i> <strong>قراءة جميع
+												الرسائل</strong>
+										</a>
+									</div>
+								</li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle count-info"
+							data-toggle="dropdown" href="#"> <i class="fa fa-bell"></i> <span
+								class="label label-primary">8</span>
+						</a>
+							<ul class="dropdown-menu dropdown-alerts">
+								<li><a href="mailbox.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-envelope fa-fw"></i> لديك 16 رسالة <span
+												class="float-right text-muted small">منذ 4 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li><a href="profile.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-twitter fa-fw"></i> 3 متابعين جدد <span
+												class="float-right text-muted small">قبل 12 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li><a href="grid_options.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-upload fa-fw"></i> تم إعادة تشغيل الخادم <span
+												class="float-right text-muted small">منذ 4 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="text-center link-block">
+										<a href="notifications.html" class="dropdown-item"> <strong>انظر
+												جميع التنبيهات</strong> <i class="fa fa-angle-right"></i>
+										</a>
+									</div>
+								</li>
+							</ul></li>
+
+
+						<li><a href="login.html"> <i class="fa fa-sign-out"></i>
+								تسجيل خروج
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>تحميل الملف</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.html">
+								الرئيسية</a></li>
+						<li class="breadcrumb-item"><a>نماذج</a></li>
+						<li class="breadcrumb-item active"><strong>تحميل
+								الملف</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="ibox ">
+							<div class="ibox-title">
+								<h5>مثال لمدخلات الملف</h5>
+							</div>
+							<div class="ibox-content">تتيح لك ميزة إدخال الملف من خلال
+								Bootstrap و Jasny إنشاء ملف جذاب أو ملف إدخال صورة الحاجيات على
+								أساس نمط Bootstrap. تمنحك مكتبة dropzone.js الإضافية خيار سحب
+								ملفات السحب.</div>
+						</div>
+					</div>
+				</div>
+				<!-------------------------------Tab Panel----------------------------------->
+				<div class="row m-t-lg">
+					<div class="col-lg-12">
+						<div class="tabs-container gray-bg">
+							<ul class="nav nav-tabs nav-pills">
+								
+								<li><a class="nav-link nav-item active" data-toggle="tab"
+									href="#tab-12"> البوم صور المؤسسة </a></li>		
+							</ul>
+							<div class="tab-content">
+								
+								
+							    <!-- ------------------------ SERVIVE IMAGE PANEL -------------------->
+							    <div id="tab-12" class="tab-pane active">
+							      <div class="panel-body">
+							        <!-- -------------------- gallery -------------------------->
+							        
+							        <div class="row">
+											<div class="col-lg-12">
+											
+											      <div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">إضافة ألبوم  
+															</h4>
+
+														<div class="ibox-content">
+															<form action="/Admin/galleryAdmin/saveAlbum"
+																method="post">
+																<div class="row">
+																	
+																	<div class="col-12">
+																		<div class="form-group ">
+																			<p class="m-t-sm"> اسم الالبوم</p>
+																			<textarea name="name" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																</div>
+																
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											   <hr>
+											   
+												<div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">إضافة صورة  
+															</h4>
+
+														<div class="ibox-content">
+															<form action="/Admin/galleryAdmin/saveImageToGallery" enctype="multipart/form-data"
+																method="post">
+																<div class="row">
+																	<div class="col-6">
+																		<p class="m-t-sm">اختيار ملف:</p>
+																		<div class="custom-file">
+																			<input id="logo" type="file" name="file"
+																				class="custom-file-input" /> <label for="logo"
+																				class="custom-file-label">اختر ملف(صورة)...</label>
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">وصف الصورة:</p>
+																			<textarea name="description" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																
+																<div class="col-12">
+																		<div class="form-group ">
+																			<p class="m-t-sm"> اختر البوم</p>
+																			<select class="form-control" name="album">
+																			  <option>-</option>
+																			  <option th:each="album : ${albums}"
+																			  th:value="*{album.name}">[[*{album.name}]]
+																			  </option>
+																			</select>
+																		</div>
+																	</div>
+																	
+																</div>
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<hr>
+												<!-- ------------------------Start Of ALL video ------------------------------------------- -->
+												<div class="row">
+												  <div class="row" th:each="album : ${albums}" th:id="*{'albumDelete'+{album.id}}" 
+												    th:if="${albums} != null">
+                                                    <div class="col-lg-12">
+                                                    <hr style="margin-top:-10px;">
+														<ul class="list-inline mb-2">
+															<li class="list-inline-item ml-4">
+																<h3>أسم الألبوم: [[*{album.name}]]</h3>
+															</li>
+															<li class="list-inline-item "><a th:href="@{/galleryAdmin/deleteAlbum/{id}(id=${album.id})}" 
+															onclick="handledeleteAlbum(event);" th:id="*{'agdjj'+{album.id}}"
+																class="btn btn-danger" style="color:#fff;">حذف الألبوم</a></li>
+														</ul>
+													<hr>
+													</div>
+														
+													<div class="col-lg-6" th:each="img,stats : ${images}" th:if="*{album.id} == *{img.album.id}"
+													th:id="*{'imgDelete'+{img.id}}"
+													style="margin-bottom: -20px;">
+														<div class="ibox">
+															<div class="ibox-title">
+																<h5>إدارة الصورة</h5>
+																<div class="ibox-tools">
+																	<a class="collapse-link"> <i
+																		class="fa fa-chevron-up"></i>
+																	</a> <a class="close-link"> <i class="fa fa-times"></i>
+																	</a>
+																</div>
+															</div>
+															<div class="ibox-content">
+
+																<div class="row">
+																	<div class="col-6">
+																		<div class="card card-block ">
+																			<img alt="*{img.description}"
+																				th:src="*{'data:image/jpeg;base64,'+{img.image}}"
+																				style="height: 228px;" src="">
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="card card-block mt-4">
+																			<div class="list-group">
+																				<h4 class="card-title text-center">تفاصيل
+																					الصورة</h4>
+																				<p class="list-group-item alert-success">
+																					<strong>رقم: </strong><span>[[*{img.id}]]</span>
+																				</p>
+																				<p class="list-group-item alert-success">
+																					<strong>الحالة: </strong><span
+																						th:id="*{'Vimg'+{img.id}}" th:class="${img.id} ? 'further-info' : 'further-info colr'">
+																						[[*{img.status}]]</span>
+																				</p>
+																				<p class="list-group-item alert-success">
+																					<span>[[*{img.name}]]</span><strong>:اسم
+																						الصورة</strong>
+																				</p>
+																				<p class="list-group-item alert-success">
+																					<strong>تاريخ الإدراج: </strong><span
+																						th:id="*{'datte'+{img.id}}">[[*{img.date}]]</span>
+																				</p>
+																				
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<hr>
+																
+																	<div class="row">
+																		<button type="button"
+																			class="btn1 btn btn-primary mr-2 ml-2"
+																			data-toggle="collapse"
+																			th:attr="data-target='#divmg'+${img.id}">&nbsp;تغيير
+																		     حالة الصورة&nbsp;</button>
+																		
+																	    	<a 
+																			th:href="@{/galleryAdmin/deleteImageFormGallery/{id}(id=${img.id})}" onclick="handledeleteImgG(event);"
+																			class="btn btn-danger" th:id="*{'imgdD'+{img.id}}">&nbsp;حذف الصورة&nbsp;</a>
+																	</div>
+																	<hr>
+																	<div class="collapse" th:id="*{'divmg'+{img.id}}">
+																		<form th:id="*{'formMgV'+{img.id}}"
+																			onsubmit="handleChangeImgGStatus(event);">
+																			<div class="alert alert-danger">
+																			<p class=" text-center font-weight-bold">تغيير
+																				حالة الصورة ، 0 = غير نشط ، 1 = نشط:</p>
+																			</div>
+																			<div class="form-group" th:id="*{'ggm'+{img.id}}">
+																				 <input type="hidden"
+																					name="id" class="form-control"
+																					th:value="*{img.id}" /> <label>الحالة:</label>
+																				<input type="number" min="0" max="1" name="status"
+																					th:id="*{'statustyt'+{img.id}}"
+																					onfocus="handleVFocuss(event);" class="form-control" />
+																			</div>
+																			<button class="btn btn-info " type="submit">
+																				<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																					class="bold">تحميل</span>
+																			</button>
+																		</form>
+																	</div>
+																	
+																</div>
+															</div>
+														</div>
+													<!-- -------------------- END -------------------------------- -->
+                                                  </div>
+												</div>
+											</div>
+										</div>
+										
+									<!-- ------------------------------------------------------->
+							      </div>
+							    </div>
+							   
+							    
+							    
+							    	    
+							    
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+							<div class="float-right">
+								<!--     10GB من  <strong>250GB</strong> -->
+								|مجانا <strong>10 جيجا من 250 جيجا مجانا </strong>
+							</div>
+							<div>
+								<strong>شركة حقوق الطبع والنشر</strong> مثال &copy;© 2014-2018
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Mainly scripts -->
+				<script src="js1/jquery-3.1.1.min.js" type="text/javascript"></script>
+				<script src="js1/popper.min.js" type="text/javascript"></script>
+				<script src="js1/bootstrap1.js" type="text/javascript"></script>
+				<script src="js1/plugins/metisMenu/jquery.metisMenu.js"
+					type="text/javascript"></script>
+				<script src="js1/plugins/slimscroll/jquery.slimscroll.min.js"
+					type="text/javascript"></script>
+
+				<script src="js1/api/ajaxPublication.js" type="text/javascript"></script>
+
+				<!-- Custom and plugin javascript -->
+				<script src="js1/inspinia.js" type="text/javascript"></script>
+				<script src="js1/plugins/pace/pace.min.js" type="text/javascript"></script>
+
+				<!-- Jasny -->
+				<script src="js1/plugins/jasny/jasny-bootstrap.min.js"
+					type="text/javascript"></script>
+
+				<!-- DROPZONE -->
+				<script src="js1/plugins/dropzone/dropzone.js"
+					type="text/javascript"></script>
+
+				<!-- CodeMirror -->
+				<script src="js1/plugins/codemirror/codemirror.js"
+					type="text/javascript"></script>
+				<script src="js1/plugins/codemirror/mode/xml/xml.js"
+					type="text/javascript"></script>
+
+		    	
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

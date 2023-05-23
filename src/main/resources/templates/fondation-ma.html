@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>المهام</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+     <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header th:replace="home :: header">
+    </header>
+
+    <!-- ------------------------- HEADER END------------------------------->
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+           <!--  
+            <div class="f2-s-1 p-r-30 m-tb-6">
+                <a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;">الرئيسية</a>
+                <i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+                <span style="font-size:15px;font-family: KacstTitle;">
+					المهام
+				 </span>
+            </div>
+            -->
+             <div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+                <span class="text-uppercase cll2 p-r-8"> 
+			   		<div class="f2-s-1 p-r-30 m-tb-6">
+				<a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;margin-right: -32px;">المؤسسة</a>
+				<i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+				 <span style="font-size:15px;font-family: KacstTitle;">
+					المهام
+				</span>
+            </div>
+            </span>
+        </div>
+        
+            <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+                <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page heading -->
+    <div class="befor-body container"></div>
+    <div class="container p-t-4 p-b-35">
+        <h2 class="f1-l-1 cl2" style="color:black;font-family:KacstTitle">
+            المهام
+        </h2>
+    </div>
+
+    <!-- Content -->
+    <section class="bg0 p-b-110">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-8 p-b-30">
+                    <div class="p-r-10 p-r-0-sr991">
+                        <!-- <span style="color: black;font-size:20px;font-weight: bold;font-family: dubai;">الإحداث والمهام</span>
+					 <br> -->
+                        <div class="col-sm gr-btn-center" data-toggle="buttons">
+                            <button class="btn bt btn-warning-outline active btn1">المادة األولى</button>
+                            <button class="btn bt btn-warning-outline btn2">المادة الثانية</button>
+                            <button class="btn bt btn-warning-outline btn3">المادة الثالثة</button>
+                            <button class="btn bt btn-warning-outline btn4">المادة الرابعة</button>
+                        </div>
+                        <div class="separater"></div>
+                        <div class="card card-shadow">
+                            <div class="card-block text-xs-center">
+                                <div class="para1 para show" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                                    <span class="card-title red" style="color: #ff0000;font-size:20px;font-weight: bold;">المادة األولى:</span>
+                                    <p> تحدث الرئاسة الشرفية لجاللة الملك، مؤسسة ال تهدف إلى تحقيق الربح، تتمتع بالشخصية المعنوية واالستقالل المالي، تحمل اسم " المؤسسة المحمدية لألعمال االجتماعية لقضاة وموظفي العدل" ويشار إليها فيما يلي باسمم"المؤسسة"" وينخرط
+                                        فيها القضاة والموظفون التابعون لقطاعي العدل والسجون.</p>
+                                    <p>يكون مقر المؤسسة بالرباط.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="para2 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red" style="color: #ff0000;font-size:20px;font-weight: bold;">المادة 2</span>
+                            <p>تهدف المؤسسة إلى إحداث وتدبير وتنمية كل المشاريع الهادفة إلى إنجاز أعمال اجتماعية لفائدة قضاة وموظفي قطاعي العدل والسجون وكذا المستخدمين بالمؤسسات التابعة لهما أو الموجودة تحت وصايتهما، وتشجيع تلك المشاريع والمساعدة في إحداثها
+                                وتدبيرها وتنميتها.
+                            </p>
+                            <p>يعتبر عضوا في المؤسسة: القضاة والموظفون التابعون لقطاعي العدل والسجون. يمكن لألعضاء الذين لهم صفة قضاة أو موظفين تابعين لقطاعي العدل والسجون والذين يوجدون في وضعية إلحاق بإدارة عمومية أن يستمروا، بناء على طلب منهم، في االستفادة
+                                طوال مدة إلحاقهم من خدمات المؤسسة.</p>
+                            <p>ويمكن أن يستفيد كذلك من خدمات المؤسسة القضاة والموظفون المتقاعدون وكذا أزواج وأبناء األعضاء المنخرطين.</p>
+                            <p>يحدد النظام الداخلي للمؤسسة مبلغ االشتراكات السنوية وكذا كيفيات وشروط استمرار استفادة القضاة والموظفين الملحقين والمتقاعدين وأزواج وأبناء المتوفين، من خدمات المؤسسة.
+                            </p>
+                            <p>تؤهل المؤسسة إلبرام اتفاقيات مع جمعيات أخرى لألعمال االجتماعية تابعة لقطاعات وزارية، قصد توسيع نطاق منافع هذا القانون ليشمل مستخدمي القطاعات المذكورة متى كانوا ال يستفيدون من خدمات مماثلة.</p>
+                        </div>
+
+                        <div class="para3 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red" style="color: #ff0000;font-size:20px;font-weight: bold;">المادة 3</span>
+                            <p>تناط بالمؤسسة، ألجل االضطالع بالمهام المسندة إليها في المادة 2 أعاله، بصفة رئيسية، األعمال التالية:</p>
+                            <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                <li>1 .تشجيع مشاريع السكن لفائدة المنخرطين ومساعدتهم وتقديم العون المالي لهم. ولهذه الغاية تقوم المؤسسة باألعمال التالية :
+                                    <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                        <li>-التحفيز على إنشاء التعاونيات والمساعدة على تأسيسها وتمويلها وتدبيرها في إطار اتفاقيات </li>
+                                        <li>-برام اتفاقيات مع الهيئات العامة والخاصة المكلفة بالتهيئة والبناء قصد بناء مساكن لفائدة المنخرطين؛</li>
+                                        <li>-منح تسبيقات قابلة لإلرجاع وتقديم العون للمنخرطين الراغبين في اقتناء مسكن أو بنائه، ومساعدتهم في ما يقومون به من مساع لدى الهيئات المتدخلة في عمليات تمويل المساكن أو اقتنائها أو بنائها؛</li>
+
+                                    </ul>
+                                </li>
+                                <li>2.تسهيل انخراط القضاة والموظفين المشار إليهم في المادة 2 أعاله، في نظام التأمين اإلجباري األساسي عن المرض وفي أنظمة التغطية الطبية التكميلية التي تتولى تدبيرها الجمعيات التعاضدية وفقا للتشريع الجاري به العمل؛
+                                </li>
+                                <li>3.إبرام اتفاقيات مع الهيئات المعنية قصد تمكين المنخرطين في المؤسسة من االستفادة بصفة اختيارية من نظام تأمين تكميلي وال سيما في مجال التغطية الطبية والتقاعد؛</li>
+                                <li>4.اقتراح أنظمة خاصة لفائدة المنخرطين، وال سيما تلك المتعلقة بتسهيل النقل، والنقل الطبي واإليواء والحج، لفائدتهم والسهر على تنفيذها، وذلك بتنسيق مع الهيئات العامة أو الخاصة؛</li>
+                                <li>5.إنجاز منشآت ذات صبغة ثقافية وترفيهية ومراكز اصطياف ومخيمات لقضاء العطلة لفائدة المنخرطين وعائالتهم؛</li>
+
+                                <li>6.منح قروض اجتماعية أو إعانات مادية بصفة استثنائية لتلبية احتياجات مستعجلة وطارئة للمنخرطين أو عائالتهم؛</li>
+                                <li>7.اقتراح وتشجيع نظام ادخار يمكن المنخرطين من إبرام اتفاقيات تهدف إلى ضمان تغطية بعض أو مجموع المصاريف الالزمة القتناء مسكن ولمتابعة أبنائهم للدراسات العليا، وذلك بتعاون مع الهيئات العامة أو الخاصة المعنية؛</li>
+                                <li>8 - إبرام اتفاقيات تعاون وشراكة مع الهيئات والجمعيات التي لها نفس الغرض</li>
+                            </ul>
+                            <br>
+                            <a href="docs/fondation.pdf" class="btn-warning-outline" target="_balnck">
+                                <strong class="side-link">إقرأ المزيد</strong>
+                            </a>
+                        </div>
+                        <div class="para4 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red" style="color: #ff0000;font-size:20px;font-weight: bold;"> المادة  4 </span>
+                            <p>أجهزة المؤسسة هي:</p>
+                            <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                <li>- مجلس للتوجيه والمراقبة؛</li>
+                                <li>- مدير عام؛ </li>
+                                <li>- فروع جهوية.</li>
+                            </ul>
+                            <br>
+                            <a href="docs/fondation.pdf" class="btn-warning-outline" target="_balnck">
+                                <strong class="side-link">إقرأ المزيد</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-5 col-lg-4 p-b-30">
+                    <div class="p-l-10 p-rl-0-sr991 p-t-5">
+                        <!-- Popular Posts -->
+                        <div>
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>المؤسسة</strong>
+                                </h3>
+                            </div>
+
+                            <ul class="p-t-35">
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side3.jpg" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{fondation-na.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">النشأة</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side4.jpg" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{/fondation-ma.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">المهام</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side6.png" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{/fondation-vm.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">الأهداف والقيم</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side8.png" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{/fondation-is.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">شركاءنا</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- ------------- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="home :: footer">
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+</body>
+
+</html>

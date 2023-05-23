@@ -1,0 +1,3156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>خدماتنا : السكن</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="css/util.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/service.css}">
+<!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+	<!-- Header -->
+	<header th:replace="home :: header">
+
+		<!-- -------------------  HEADER END  ------------------------------------->
+	</header>
+
+	<!-- Breadcrumb -->
+	<div class="container">
+		<div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+			<!-- --------------------------- -->
+			<div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+				<span class="text-uppercase cll2 p-r-8">
+
+					<div class="f2-s-1 p-r-30 m-tb-6">
+						 <a
+							th:href="@{/home.html}" class="cl9"
+							style="font-size: 15px; font-family: KacstTitle;margin-right: -32px;">الخدمات</a> <i
+							class="arrow left"
+							style="font-size: 15px; font-family: KacstTitle;"> &#62 </i> <span
+							style="font-size: 15px; font-family: KacstTitle;"> السكن </span>
+					</div>
+				</span>
+			</div>
+			<div
+				class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text"
+					name="search" placeholder="بحث">
+				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!--  </div>-->
+
+	<!-- Content -->
+	<div class="befor-body container"></div>
+	<section class="bg0 p-b-140 p-t-10">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10 col-lg-8 p-b-30">
+					<div class="p-r-10 p-r-0-sr991">
+						<!-- Blog Detail -->
+						<div class="p-b-70">
+							<h2
+								style="color: black; font-family: KacstTitle; font-size: 32px; margin-bottom: 20px;">
+								السكن</h2>
+
+							<div class="wrap-pic-max-w p-b-30" style="margin-bottom: -15px;">
+								<img src="images/service11-1.jpg" alt="IMG">
+							</div>
+							<!-- ---------- ------------------------ -->
+							<div class="p-r-10 p-r-0-sr991">
+								<span
+									style="color: black; font-size: 20px; font-weight: bold; font-family: dubai;">مزايا
+									و شروط تفضيلية تحملها اتفاقيات شراكة مع مؤسسات بنكية و عقارية </span>
+								<br>
+								<br>
+								<div class="col-sm gr-btn-center" data-toggle="buttons">
+									<button class="btn bt btn-warning-outline active btn1">القروض
+										المدعمة</button>
+									<button class="btn bt btn-warning-outline btn2">الخدمات
+										البنكية</button>
+									<button class="btn bt btn-warning-outline btn3">المنتوجات
+										العقارية</button>
+									<button class="btn bt btn-warning-outline btn4">منتوج
+										الأبناك التشاركية</button>
+								</div>
+								<div class="separater"></div>
+								<div class="card card-shadow" id="1"
+									style="background-color: #ebebeb; padding-right: 0px; padding-left: 0px;">
+
+									<div class="card-block text-xs-center"
+										style="length: 100%; padding-right: 0px; padding-left: 0px;">
+										<div class="para1 para show" aria-hidden="true">
+											<h4 class="card-title red"
+												style="color: #ff0000; font-size: 20px; font-weight: bold;">
+												القروض المدعمة:</h4>
+											<div class="titre_section"
+												style="padding-right: 0px; padding-top: 0px; font-size: 19px;"
+												align="right">
+												<!--  <strong>1/ القروض المدعمة: </strong> -->
+											</div>
+											<p
+												style="padding-top: 20px; margin-bottom: 15px; text-align: right;">
+												في إطار برامج الدعم التي تخصصها المؤسسة المحمدية لكافة
+												منخرطيها لولوج مجال الملكية العقارية، تتيح خدمات صندوق "عدل
+												سكن " الذي يسهر على تدبيره "صندوق الضمان المركزي" للمنخرطين
+												غير المالكين لسكن رئيسي الحصول على قروض تتحمل المؤسسة
+												فوائدها البنكية كليا أو جزئيا وفقا للصيغ المحددة في المنشور
+												عدد 02/2019 الصادر بتاريخ 04 فبراير 2019.<br /> وتتضمن صيغ
+												الدعم نوعين من القروض العقارية وهي:
+											</p>
+											<p style="padding-right: 30px; text-align: right;">
+												<strong> 1/ الاستفادة من مبلغ 120 ألف درهم تتحمل
+													المؤسسة جميع فوائده البنكية، يتم تسديده داخل مدة 10 سنوات.<br />
+													2/ الاستفادة من مبلغ 180 ألف درهم تتحمل المؤسسة بموجبه نسبة
+													2% من نسبة الفائدة التعاقدية المعمول بها في إطار اتفاقيات
+													التعاون البنكية، تؤدى أقساطه داخل مدة 20 سنة.
+												</strong>
+											</p>
+											<p style="text-align: right;">&bull; يوضح الجدول المؤسسات
+												البنكية المنخرطة في إطار برنامج "عدل سكن" ونسب الفوائد
+												المعمول بها بدون احتساب الضريبة على القيمة المضافة:</p>
+											<br />
+											<br />
+											<div class="tabstat">
+												<table border="2" width="100%" style="font-family: dubai;">
+													<tbody>
+														<tr style="background-color: #f5f5f5">
+															<td width="177">المؤسسة البنكية</td>
+															<td width="92">قرض مدعم كليا 120 ألف درهم</td>
+															<td width="100">&nbsp; قرض مدعم بنسبة 2% 180 ألف
+																درهم</td>
+															<td width="206">برامج الدعم</td>
+														</tr>
+														<tr class="ccc2">
+															<td width="177" style="background: #fcf8e3">البنك
+																المركزي الشعبي</td>
+															<td width="92" style="background: #fcf8e3">4,20%</td>
+															<td width="100" style="background: #fcf8e3">4,20%</td>
+															<td style="padding: 20px;" rowspan="6" align="right"
+																valign="middle" width="206">* اقتناء سكن جاهز أو في
+																طور البناء <br /> * بناء سكن فوق بقعة أرضية معدة للبناء<br />
+																* اقتناء بقعة أرضية وبناؤها( تقديم ملف اقتناء البقعة
+																مصحوبا بملف تقني خاص بالبناء )
+															</td>
+														</tr>
+														<tr style="background: #dff0d8">
+															<td width="177">التجاري وفا بنك ووفا إيموبيلي</td>
+															<td width="92">4,30%</td>
+															<td width="100">4,40%</td>
+														</tr>
+														<tr style="background: #f2dede">
+															<td width="177">البنك المغربي للتجارة الخارجية</td>
+															<td width="92">4,25%</td>
+															<td width="100">4,25%</td>
+														</tr>
+														<tr style="background: #d9edf7">
+															<td width="177">بريد بنك</td>
+															<td width="92">4,25%</td>
+															<td width="100">4,25%</td>
+														</tr>
+														<tr style="background: #fcf8e3">
+															<td width="177">القرض الفلاحي</td>
+															<td width="92">4,30%</td>
+															<td width="100">4,40%</td>
+														</tr>
+														<tr style="background: #dff0d8">
+															<td width="177">الشركة العامة للأبناك</td>
+															<td width="92">4,50%</td>
+															<td width="100">4,50%</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<br />
+											<p style="text-align: right; font-size: 20px;">
+												<strong style="color: #a91ba4;"> ملحوظة</strong>
+											</p>
+											<p style="text-align: right;">
+												* القرض المدعم كليا : لا يسدد المنخرط منه إلا الرأسمال
+												المفترض<br /> * القرض المدعم جزئيا : يؤدي المنخرط القسط
+												الشهري الذي يعادل الفرق بين القسط الشهري مع احتساب نسبة
+												الفائدة كاملة ناقص نسبة 4% تتحمل المؤسسة نسبة 2%
+											</p>
+											<br>
+											<p>يكون مقر المؤسسة بالرباط.</p>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="para2 para hide completly-hidden" aria-hidden="true">
+									<h4 class="red"
+										style="color: #ff0000; font-size: 20px; font-weight: bold;">
+										الخدمات البنكية :</h4>
+									<div class="titre_section" style="font-size: 19px;"
+										align="right">
+										<!--  <strong> 2/ الخدمات البنكية :</strong>-->
+									</div>
+									<p
+										style="padding-top: 20px; margin-bottom: 15px; text-align: right;">تتضمن
+										الاتفقيات المبرمة مع المؤسسات البنكية العديد من الامتيازات
+										سواء تعلق الامر بالقروض العقارية أو القروض الاستهلاكية أو فيما
+										يتعلق ببعض الخدمات التي تنفرد بها بعض المؤسسات المصرفية
+										كالقروض المتنوعة والادخار، ويشير الجدول إلى أهم هذه الامتيازات</p>
+									<br />
+									<div class="wrapper wrapper-content animated fadeInRight">
+										<div class="row">
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> البنك الشعبي</small>
+													</div>
+													<img src="images/s2.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 60%; length: 60%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseOne" style="font-size: 11px;">قرض
+																				السكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseOne"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								4,20% إلى غاية 25 سنة</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">12/18
+																								شهرا</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTwo"
+																				style="font-size: 11px;"> قرض استهلاكي</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTwo" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								5,75% إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								500 الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseThree"
+																				style="font-size: 11px;"> قرض متابعة الدراسات
+																				العليا</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseThree" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">-
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								250 ألف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+
+															</div>
+														</div>
+													</div>
+
+													<div class="m-t text-righ" style="margin-top: 4px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+
+												</div>
+											</div>
+                                            <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> التجاري وفا بنك/ وفا إيموبلي</small>
+													</div>
+													<img src="images/h2.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseFour" style="font-size: 11px;">قرض
+																				السكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseFour"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								<li>4,25% أقل من 7 سنوات</li>
+																							<li>4,30% إلى غاية 15 سنة</li>
+																							<li>4,40% إلى غاية 20 سنة</li>
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								حسب الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseFive"
+																				style="font-size: 11px;"> قرض استهلاكي</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseFive" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								5,75% إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">400
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<br>
+													<br>
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                             <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> مصرف المغرب </small>
+													</div>
+													<img src="images/h7.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 60%; length: 60%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseSix" style="font-size: 11px;">قرض
+																				سكن (اقتطاع من المنبع)</a>
+																		</h5>
+																	</div>
+																	<div id="collapseSix"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;"><li>
+																									4,20% أقل من 7 سنوات</li>
+																							<li>4,30% إلى غاية 15 سنة</li>
+																							<li>4,40% إلى غاية 20 سنة</li>
+																							<li>4,50% إلى غاية 25 سنة</li></td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								حسب الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseEight"
+																				style="font-size: 11px;">قرض استهلاكي</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseEight" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;"><li>5,50%
+																									إلى غاية4 سنوات</li>
+																							<li>5,70% إلى غاية 7 سنوات</li></td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">300
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+
+
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+
+														<small>البنك المغربي للتجارة الخارجية </small>
+													</div>
+													<img src="images/h3.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseEleven" style="font-size: 11px;">
+																				قرض السكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseEleven"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,25%
+																								إلى غاية 25 سنة</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">حسب
+																								الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTwelve"
+																				style="font-size: 11px;">قرض استهلاكي</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTwelve"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								5,75% إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">300
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseThirteen"
+																				style="font-size: 11px;"> 1قرض متابعة الدراسات
+																				العليا</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseThirteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;"><li>5,99%</li>
+																							<li>144 شهرا</li></td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">250
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseFourteen"
+																				style="font-size: 11px;">قرض متابعة الدارسات
+																				العليا "إظافي"</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseFourteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">6,50%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">250
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseFifteen"
+																				style="font-size: 11px;">قرض دراسات العليا
+																				بالخارج</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseFifteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">6,50%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">200
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+
+													<div class="m-t text-righ" style="margin-top: 15px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                             <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> القرض الفلاحي </small>
+													</div>
+													<img src="images/h5.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseSixteen" style="font-size: 11px;">قرض
+																				سكن (اقتطاع من المنبع)</a>
+																		</h5>
+																	</div>
+																	<div id="collapseSixteen"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								<li>4,30% أقل من 10 سنوات</li>
+																							<li>4,35% إلى غاية 15 سنة</li>
+																							<li>4,40% إلى غاية 20 سنة</li>
+																							<li>4,45% إلى غاية 25 سنة</li>
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">حسب
+																								الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default"
+																	style="background: #f2dede">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseSeventeen"
+																				style="font-size: 11px;"> قرض سكن (اقتطاع بنكي )</a>
+																			</centre>
+																		</h4>
+																	</div>
+																	<div id="collapseSeventeen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,30%
+																								أقل من 10 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">حسب
+																								الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseEighteen"
+																				style="font-size: 11px;"> قرض استهلاكي (اقتطاع
+																				من المنبع)</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseEighteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5,75%
+																								إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">300
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseNineteen"
+																				style="font-size: 11px;"> قرض استهلاكي( اقتطاع
+																				بنكي )</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseNineteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">6,25%
+																								إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">300
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+													<div class="m-t text-righ" style="margin-top: 8px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                            <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small>القرض الفلاحي</small>
+													</div>
+													<img src="images/h4.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseNine" style="font-size: 11px;">قرض
+																				السكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseNine"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,25%
+																								أقل من 25 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">حسب
+																								الدخل</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTen"
+																				style="font-size: 11px;"> قرض استهلاكي</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTen" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الفائدة</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5,75%
+																								إلى غاية 7 سنوات</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">السقف</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">300
+																								الف درهم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+													</br>
+													</br>
+													</br>
+													
+													<div class="m-t text-righ" style="margin-top: 16px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+								<style>
+
+/* .fa-long-arrow-right:before {
+    content: "\f178";
+}*/
+.panel-body {
+	padding: 4px;
+}
+
+.panel-group .panel {
+	margin-bottom: 0;
+	border-radius: 4px;
+}
+
+.panel-default {
+	border-color: #e7eaec;
+}
+
+.panel {
+	/* margin-bottom: 20px;*/
+	background-color: #fff;
+	border: 1px solid transparent;
+	/* border-radius: 4px;*/
+}
+
+.panel-default>.panel-heading {
+	color: #333;
+	background-color: #f5f5f5;
+	border-color: #e7eaec;
+}
+
+.panel-heading {
+	color: white;
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.ibox-content h1, .ibox-content h2, .ibox-content h3, .ibox-content h4,
+	.ibox-content h5, .ibox-title h1, .ibox-title h2, .ibox-title h3,
+	.ibox-title h4, .ibox-title h5 {
+	margin-top: 5px;
+}
+
+.panel-title {
+	/* font-size: inherit;*/
+	
+}
+
+h3, h4, h5 {
+	/*   margin-top: 5px;*/
+	font-weight: 600;
+}
+
+h5 {
+	/* font-size: 12px;*/
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	/* font-weight: 100;*/
+	
+}
+
+.h5, h5 {
+	/* font-size: 1.25rem;*/
+	
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: .5rem;
+	font-family: inherit;
+	/* font-weight: 500;*/
+	line-height: 1.2;
+	color: inherit;
+}
+
+.collapse:not (.show ) {
+	display: none;
+}
+
+<!--
+-->
+*, :after, :before {
+	margin: 0;
+	margin-top: 0px;
+	margin-right: 0 px;
+	margin-bottom: 0 px;
+	margin-left: 0 px;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	/* -moz-box-sizing: border-box;*/
+	box-sizing: border-box;
+}
+
+.wrapper-content {
+	padding: 20px 10px 40px;
+}
+
+.wrapper {
+	/* padding: 0 20px;*/
+	
+}
+
+.fadeInRight {
+	/*-webkit-animation-name: fadeInRight;*/
+	animation-name: fadeInRight;
+}
+
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	/*margin-right: -15px;
+    margin-left: -15px;*/
+}
+
+element.style {
+	
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5,
+	.col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1,
+	.col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4,
+	.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto,
+	.col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2,
+	.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8,
+	.col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11,
+	.col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+	.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1,
+	.col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4,
+	.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+	position: relative;
+	/* width: 160%;*/
+	min-height: 3px;
+	padding-right: 15px;
+	padding-left: 15px;
+	max-length: 100%;
+}
+
+*, ::after, ::before {
+	/*box-sizing: border-box;*/
+	
+}
+
+user agent stylesheet
+div {
+	display: block;
+}
+
+.p-lg {
+	padding: 30px;
+}
+
+.navy-bg, .bg-primary {
+	background-color: #efd8c2 !important;
+	color: #ffffff;
+}
+
+.widget-head-color-box {
+	border-radius: 5px 5px 0 0;
+	/*margin-top: 10px;*/
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.navy-bg, .bg-primary {
+	background-color: #efd8c2 !important;
+	color: #ffffff;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+img.circle-border {
+	border: 6px solid #FFFFFF;
+	/*border-radius: 50%;*/
+}
+
+.m-b-md {
+	/*  margin-bottom: 20px;*/
+	
+}
+
+.rounded-circle {
+	border-radius: 50% !important;
+}
+
+img {
+	vertical-align: middle;
+	/* border-style: none;*/
+}
+
+.widget-text-box {
+	padding: 4px;
+	border: 1px solid #e7eaec;
+	background: #ffffff;
+}
+
+element.style {
+	
+}
+
+.btn:not (:disabled ):not (.disabled ) {
+	cursor: pointer;
+}
+
+.btn-white {
+	color: inherit;
+	background: white;
+	border: 1px solid #e7eaec;
+}
+
+.btn-xs {
+	font-size: 0.7rem;
+	padding: 0.2rem 0.4rem;
+}
+
+.btn {
+	border-radius: 3px;
+	/* font-size: inherit;*/
+}
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	/*-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;*/
+	user-select: none;
+	/*border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;*/
+	line-height: 1.5;
+	/* border-radius: .25rem;*/
+	transition: color .15s ease-in-out, background-color .15s ease-in-out,
+		border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+a {
+	/*  color: #337ab7;
+    cursor: pointer;*/
+	
+}
+
+a {
+	/* color: #007bff;*/
+	text-decoration: none;
+	/* background-color: transparent;
+    -webkit-text-decoration-skip: objects;*/
+}
+
+*, ::after, ::before {
+	/*box-sizing: border-box;*/
+	
+}
+
+.btn:not (:disabled ):not (.disabled ) {
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #1ab394;
+	border-color: #1ab394;
+}
+
+.btn-xs {
+	font-size: 0.7rem;
+	padding: 0.2rem 0.4rem;
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	/*  -moz-osx-font-smoothing: grayscale;*/
+}
+
+*, ::after, ::before {
+	/* box-sizing: border-box;*/
+	
+}
+
+user agent stylesheet
+i {
+	/* font-style: italic;*/
+	
+}
+
+.btn:not (:disabled ):not (.disabled ) {
+	cursor: pointer;
+}
+</style>
+
+<style>
+/* E-commerce */
+.product-box {
+	padding: 0;
+	border: 2px solid #e7eaec;
+}
+
+.product-box:hover, .product-box.active {
+	border: 1px solid transparent;
+	-webkit-box-shadow: 0 3px 7px 0 #a8a8a8;
+	-moz-box-shadow: 0 3px 7px 0 #a8a8a8;
+	box-shadow: 0 3px 7px 0 #a8a8a8;
+}
+
+.product-imitation {
+	text-align: center;
+	padding: 90px 0;
+	background-color: #f8f8f9;
+	color: #bebec3;
+	font-weight: 600;
+}
+
+.cart-product-imitation {
+	text-align: center;
+	padding-top: 30px;
+	height: 80px;
+	width: 80px;
+	background-color: #f8f8f9;
+}
+
+.product-imitation.xl {
+	padding: 120px 0;
+}
+
+.product-desc {
+	padding: 20px;
+	position: relative;
+}
+
+.ecommerce .tag-list {
+	padding: 0;
+}
+
+.ecommerce .fa-star {
+	color: #d1dade;
+}
+
+.ecommerce .fa-star.active {
+	color: #f8ac59;
+}
+
+.ecommerce .note-editor {
+	border: 1px solid #e7eaec;
+}
+
+table.shoping-cart-table {
+	margin-bottom: 0;
+}
+
+table.shoping-cart-table tr td {
+	border: none;
+	text-align: right;
+}
+
+table.shoping-cart-table tr td.desc, table.shoping-cart-table tr td:first-child
+	{
+	text-align: left;
+}
+
+table.shoping-cart-table tr td:last-child {
+	width: 80px;
+}
+
+.product-name {
+	font-size: 16px;
+	font-weight: 600;
+	color: #676a6c;
+	display: block;
+	margin: 2px 0 5px 0;
+}
+
+.product-name:hover, .product-name:focus {
+	color: #1ab394;
+}
+
+.product-price {
+	font-size: 14px;
+	font-weight: 600;
+	color: #ffffff;
+	background-color: #1ab394;
+	padding: 6px 12px;
+	position: absolute;
+	top: -32px;
+	right: 0;
+}
+
+.product-detail .ibox-content {
+	/*padding: 30px 30px 50px 30px;*/
+	
+}
+
+.image-imitation {
+	background-color: #f8f8f9;
+	text-align: center;
+	padding: 200px 0;
+}
+
+.product-main-price small {
+	font-size: 10px;
+}
+
+.product-images {
+	margin: 0 20px;
+}
+
+.btn:not (:disabled ):not (.disabled ) {
+	cursor: pointer;
+}
+
+.btn-primary.btn-outline {
+	color: #ffffff;
+}
+
+.btn-outline {
+	color: inherit;
+	background-color: transparent;
+	transition: all .5s;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #1ab394;
+	border-color: #1ab394;
+}
+
+.btn-xs {
+	font-size: 0.7rem;
+	padding: 0.2rem 0.4rem;
+}
+
+.btn {
+	border-radius: 3px;
+	font-size: inherit;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #efd8c2;
+	border-color: #efd8c2;
+}
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+
+user agent stylesheet
+i {
+	font-style: italic;
+}
+
+.btn:not (:disabled ):not (.disabled ) {
+	cursor: pointer;
+}
+
+.btn-primary.btn-outline {
+	color: #ffffff;
+}
+
+.ibox-content {
+	clear: both;
+}
+
+.ibox-content {
+	background-color: #ffffff;
+	color: inherit;
+	/* padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;*/
+}
+
+.ibox {
+	clear: both;
+	margin-bottom: 25px;
+	margin-top: 0;
+	padding: 0;
+}
+
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+
+user agent stylesheet
+div {
+	display: block;
+}
+
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+
+user agent stylesheet
+div {
+	display: block;
+}
+
+.btn-outline {
+	/*  color: inherit;
+    background-color: transparent;
+    transition: all .5s;*/
+	
+}
+
+
+.btn {
+	/*display: inline-block;
+    font-weight: 400;*/
+	text-align: center;
+	white-space: nowrap;
+	}
+</style>
+
+								<br>
+
+								<div class="para3 para hide completly-hidden" aria-hidden="true"
+									style="padding-right: 12px; padding-left: 12px;">
+									<h4 class="red"
+										style="color: #ff0000; font-size: 20px; font-weight: bold;">
+										المنتوجات العقارية :</h4>
+									<p>
+									<div class="titre_section"
+										style="padding-right: 0px; padding-top: 0px; font-size: 19px;"
+										align="right">
+										<!--  <strong>3/ المنتوجات العقارية :</strong>-->
+									</div>
+									<p
+										style="padding-top: 20px; margin-bottom: 15px; text-align: right;">تتضمن
+										الاتفاقيات المبرمة مع المجموعات العقارية العديد من المزايا
+										أهممها استفادة منخرطي المؤسسة من تخفيضات في الأثمنة الإجمالية
+										للعقارات وتخفيضات تخص الدفعات الأولية، وإعطاء الأسبقية لمنخرطي
+										المؤسسة قبل التسويق العمومي للمشاريع.</p>
+									<br />
+									<div class="wrapper wrapper-content animated fadeInRight">
+										<div class="row">
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+
+														<small> الضحى</small>
+													</div>
+													<img src="images/d1.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseOne" style="font-size: 11px;">
+																				بقع أرضية</a>
+																		</h5>
+																	</div>
+																	<div id="collapseOne"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								عين عودة،مكناس،فاس،الدارالبيضاء،بني
+																								ملال،مراكش،العيون</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTwo"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTwo" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								طنجة،القنيطرة،تامسنة،مكناس،
+																								الدارالبيضاء،الجديدة،مراكش،أكادير،وجدة</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseThree"
+																				style="font-size: 11px;"> السكن الممتاز</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseThree" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								حي الرياض بالرباط/شاطئ الأمم بالقنيطرة/بوسكورة
+																								بالدارالبيضاء/مراكش/فاس</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="m-t text-righ" style="margin-top: 7px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                            <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> السعادة</small>
+													</div>
+													<img src="images/s33.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 55%; length: 55%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseFour" style="font-size: 11px;">
+																				بقع أرضية </a>
+																		</h5>
+																	</div>
+																	<div id="collapseFour"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">20%/4%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								الدارالبيضاء/فاس /برشيد</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseFive"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط </a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseFive" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4%/2%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								النواصر /البوغاز بطنجة/الصخيرات/ايت ملول/تاركة
+																								وتامنصورت بمراكش/سيدي حرازم</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<br>
+											<!-- ----------------------------------------------------------- -->
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small>التاج</small>
+													</div>
+													<img src="images/taj.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseEleven" style="font-size: 11px;">
+																				بقع أرضية</a>
+																		</h5>
+																	</div>
+																	<div id="collapseEleven"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%/8%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								تجزيئات متنوعة بفاس وبضواحيه</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTwelve"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTwelve"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%/8%
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								مشروع النخيل/ الآمان /التضامن</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																</br>
+															</div>
+														</div>
+													</div>
+													</br>
+
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<!-- ----------------------------------------------------------- -->
+
+										</div>
+										</br>
+										<div class="row">
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> اليونس</small>
+													</div>
+													<img src="images/elyouns.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseSix" style="font-size: 11px;">
+																				بقع أرضية</a>
+																		</h5>
+																	</div>
+																	<div id="collapseSix"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">10%/5%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								مهدية بالقنيطرة / الشلالات بالمحمدية/رياض الرحمة
+																								بالدارالبيضاء/سيدي علال البحراوي</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseEight"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط </a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseEight" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								طنجة/الفنيدق/عين عودة/ سيدي علال البحراوي/فاس</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseThirteen"
+																				style="font-size: 11px;">السكن الممتاز</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseThirteen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">3%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								الرباط أكدال/الرباط دارالسلام/فضاء الفنون الدار
+																								البيضاء/إكن بارك بأكادير/أكنزا شارع محمد السادس
+																								بمراكش</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+
+													<div class="m-t text-righ" style="margin-top: 7px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                            <br>
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> ديار المنصور</small>
+													</div>
+													<img src="images/diyar.jpg"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 48%; length: 48%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseNine" style="font-size: 11px;">
+																				السكن الاجتماعي</a>
+																		</h5>
+																	</div>
+																	<div id="collapseNine"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">خصم
+																								5 الف درهم /الدفع االأولي</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">
+																								الجديدة/تامسنة/زناتة/العروي/الخميسات/ورزازات/عين
+																								عتيق/سيدي يحي/حد السوالم/ سيدي سليمان</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTen"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTen" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">5%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">اكادير/المنصور
+																								الرباط</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+
+																		</div>
+																	</div>
+																</div>
+																</br>
+															</div>
+														</div>
+													</div>
+													</br>
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+											<br>
+											<!-- ------------------------------------------------------- -->
+											<div class="col-lg-4">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> انديكو</small>
+													</div>
+													<img src="images/endico.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseSixteen" style="font-size: 11px;">
+																				بقع أرضية</a>
+																		</h5>
+																	</div>
+																	<div id="collapseSixteen"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">3%/8%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">تجزيئات
+																								متنوعة بفاس</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default"
+																	style="background: #d9edf7">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseSeventeen"
+																				style="font-size: 11px;"> السكن الاقتصادي
+																				والمتوسط والممتاز</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseSeventeen"
+																		class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">التخفيض</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">3%/8%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">الموقع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">مشروع
+																								طريق زعير / فاس /مكناس وسلا ومحلات تجارية بنفس
+																								المدن</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+
+											<!-- -------------------------------------------------------- -->
+										</div>
+									</div>
+
+									<br />
+								</div>
+								<br>
+								<div class="para4 para hide completly-hidden" aria-hidden="true"
+									style="padding-right: 12px; padding-left: 12px;">
+									<h4 class="red"
+										style="color: #ff0000; font-size: 20px; font-weight: bold;">4/
+										منتوج الأبناك التشاركية:</h4>
+									<div class="titre_section"
+										style="padding-right: 0px; padding-top: 0px; font-size: 19px;"
+										align="right">
+										<!--  <strong> المنتوجات العقارية :</strong>-->
+									</div>
+									<p
+										style="padding-top: 20px; margin-bottom: 15px; text-align: right;"></p>
+									<br />
+
+									<div class="wrapper wrapper-content animated fadeInRight">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+													
+														<small>بنك الصفاء</small>
+													</div>
+													<img src="images/z1.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background-color: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseOne" style="font-size: 11px;">المرابحة
+																				سكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseOne"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,50%</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">أقل
+																								من 15 سنة</td>
+																						</tr>
+																						<tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,70%</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">إلى
+																								غاية 25 سنة</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseTwo"
+																				style="font-size: 11px;">المرابحة سيارة</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseTwo" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">-
+																							</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">إلى
+																								غاية 84 شهر ا</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                             <br>
+											<div class="col-lg-6">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+
+														<small> بنك التمويل والإنماء</small>
+													</div>
+													<img src="images/z2.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 46%; length: 46%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseFour" style="font-size: 11px;">
+																				بقع أرضية </a>
+																		</h5>
+																	</div>
+																	<div id="collapseFour"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,50%
+																								من قيمة العقار</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">(اقتطاع
+																								من المنبع) 25 سنة</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseFive"
+																				style="font-size: 11px;">المرابحة سيارة</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseFive" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">من
+																								7,65% إلى 8,45%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">إلى
+																								غاية 72 شهر ا</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseSeven"
+																				style="font-size: 11px;">التجهيز</a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseSeven" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">من
+																								%8 إلى %8,8</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">إلى
+																								غاية 60 شهر ا</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="m-t text-righ" style="margin-top: 4px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										</br>
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> الأخضر بنك</small>
+													</div>
+													<img src="images/zz3.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseSix" style="font-size: 11px;">المرابحة
+																				سكن</a>
+																		</h5>
+																	</div>
+																	<div id="collapseSix"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,50%
+																								من قيمة العقار</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">(اقتطاع
+																								من المنبع) 25 سنة</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h4 class="panel-title" style="text-align: center;">
+																			<centre> <a data-toggle="collapse"
+																				data-parent="#accordion" href="#collapseEight"
+																				style="font-size: 11px;">المرابحة سيارة </a> </centre>
+																		</h4>
+																	</div>
+																	<div id="collapseEight" class="panel-collapse collapse"
+																		style="background-color: #f5f5f5;">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">6,25%</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">إلى
+																								غاية 84 شهر ا</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+
+													<div class="m-t text-righ" style="margin-top: 7px;">
+														<a href="#" class="btn btn-xs btn-outline btn-primary" >Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+                                             <br>
+											<div class="col-lg-6">
+												<div class="widget-head-color-box navy-bg p-lg text-center"
+													style="background-color: #FAD7A0; width: 100%; max-width: 600px;">
+													<div class="m-b-md">
+														<small> بنك الأمان</small>
+													</div>
+													<img src="images/zz4.png"
+														class="rounded-circle circle-border m-b-md" alt="profile"
+														style="width: 45%; length: 45%">
+												</div>
+												<div class="widget-text-box"
+													style="width: 100%; max-width: 600px;">
+													<h4 class="media-heading"></h4>
+													<div class="ibox-content"
+														style="padding-left: 2px; padding-right: 2px;">
+														<div class="panel-body">
+															<div class="panel-group" id="accordion">
+																<div class="panel panel-default">
+																	<div class="panel-heading"
+																		style="background: #d9edf7; padding-top: 2px; padding-bottom: 2px">
+																		<h5 class="panel-title" style="text-align: center;">
+																			<a data-toggle="collapse" data-parent="#accordion"
+																				href="#collapseNine" style="font-size: 11px;">المرابحة
+																				سكن </a>
+																		</h5>
+																	</div>
+																	<div id="collapseNine"
+																		class="panel-collapse collapse in"
+																		style="background-color: #f5f5f5">
+																		<div class="panel-body">
+
+																			<div style="padding-left: 1px; padding-right: 1px">
+																				<table class="table table-bordered"
+																					style="font-size: 8px">
+
+																					<tbody>
+																						<tr>
+																							<td width="50"
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">هامش
+																								الربح</td>
+																							<td
+																								style="padding-right: 1px; color: #fd7e14; padding-top: 2px; padding-bottom: 2px;">مدة
+																								الاقتطاع</td>
+																						</tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,50%</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">(اقتطاع
+																								من المنبع) 25 سنة</td>
+																						</tr>
+																						<tr>
+																						<tr>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">4,75%</td>
+																							<td
+																								style="padding-right: 1px; padding-top: 2px; padding-bottom: 2px;">(اقتطاع
+																								بنكي) 25 سنة</td>
+																						</tr>
+
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													</br>
+													</br>
+													</br>
+													</br>
+													<div class="m-t text-righ">
+														<a href="#" class="btn btn-xs btn-outline btn-primary">Info
+															<i class="fa fa-long-arrow-right"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<!-- Share -->
+							<div class="flex-s-s" style="margin-top: -20px;">
+								<span class="f1-s-12 cl5 p-t-1 m-r-15"> شارك على: </span>
+
+								<div class="flex-wr-s-s size-w-0">
+									<a href="#"
+										class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-facebook-f m-r-7"></i> Facebook
+									</a> <a href="#"
+										class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-twitter m-r-7"></i> Twitter
+									</a> <a href="#"
+										class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-google-plus-g m-r-7"></i> Google+
+									</a> <a href="#"
+										class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-pinterest-p m-r-7"></i> Pinterest
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Leave a comment -->
+						<div>
+							<h4 class="f1-l-4 cl3 p-b-12">إترك تعليق</h4>
+
+							<p class="f1-s-13 cl8 p-b-40">سنحافظ على خصوصية بريدك
+								الإلكتروني . المرجو تعبئة كل الخانت</p>
+
+							<form>
+								<textarea
+									class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20"
+									name="msg" placeholder="..."></textarea>
+
+								<input
+									class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20"
+									type="text" name="name" placeholder="الإسم*"> <input
+									class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20"
+									type="text" name="email" placeholder="البريد الإلكتروني*">
+
+								<input
+									class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20"
+									type="text" name="website" placeholder="الموقع الإلكتروني">
+
+								<button
+									class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+									أضف تعليق</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Sidebar -->
+
+				<div class="col-md-10 col-lg-4 p-b-30">
+					<div class="p-l-10 p-rl-0-sr991 p-t-70">
+						<!-- Category -->
+						<div class="p-b-60">
+							<div class="how2 how how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									<strong> خدماتنا </strong>
+								</h3>
+							</div>
+							<ul class="p-t-35">
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee;">
+									<a th:href="@{/hebergem.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> السكن </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/santé.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> الصحة </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/transport1.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> النقل </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/préts1.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> القروض </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/assurances.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> التامين </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/bourse.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> المنح </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/3omra.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> العمرة </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/centre-été.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> مراكز
+										الإصطياف </a>
+								</li>
+								<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+									<a th:href="@{/divertissement1.html}"
+									class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13"
+									style="padding-bottom: 9px; padding-top: 9px;"> الترفيه </a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer th:replace="home :: footer"> </footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top"> <span
+			class="fas fa-angle-up"></span>
+		</span>
+	</div>
+
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script src="js/clock.js"></script>
+</body>
+
+</html>

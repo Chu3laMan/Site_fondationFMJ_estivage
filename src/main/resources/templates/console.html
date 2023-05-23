@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>تسجيل بنجاح</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ========================================================================================== -->
+    <link type="text/css" href="css/slide.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/iconic/css/material-design-iconic-font.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/animsition/css/animsition.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/util.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <div class="topbar">
+                <div class="content-topbar container h-100">
+                    <div class="left-topbar">
+                        <span class="left-topbar-item flex-wr-s-c" id="ct">	
+						</span>
+
+                        <a th:href="@{/about.html}" class="left-topbar-item">
+						 عن المؤسسة 	
+						</a>
+
+                        <a th:href="@{/contact.html}" class="left-topbar-item">
+						تواصل معنا	
+						</a>
+
+                        <a th:href="@{/registration.html}" class="left-topbar-item">
+						 الإنخراط
+						</a>
+
+                        <a th:href="@{/login}" class="left-topbar-item">
+						  تسجيل الدخول
+						</a>
+                    </div>
+
+                    <div class="right-topbar">
+                        <a href="https://www.facebook.com/fmjsc/" target="_blanck">
+                            <span class="fab fa-facebook-f"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-twitter"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-pinterest-p"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-vimeo-v"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-youtube"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="wrap-header-mobile">
+                <!-- Button show menu
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+                    <span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+                    </span>
+                </div> -->
+                <!-- Logo moblie -->
+                <div class="logo-mobile">
+                    <a th:href="@{/home.html}"><img src="images/icons/logo-fmjj.png" alt="IMG-LOGO" class="img-logo-mobile"></a>
+                </div>
+
+
+            </div>
+
+            <!-- Menu Mobile -->
+            <!--  -->
+            <div class="wrap-logo no-banner container">
+                <div class="logo">
+                    <a th:href="@{/home.html}"><img class="logo-img1" src="images/icons/logoRM.png" alt="LOGO"></a>
+                    <a th:href="@{/home.html}"><img class="logo-img2" src="images/icons/logo-fmjj.png" alt="LOGO"></a>
+                    <a th:href="@{/home.html}"><img class="logo-img3" src="images/icons/img3.png" alt="LOGO"></a>
+                    
+                </div>
+            </div>
+            <!--  -->
+        </div>
+    </header>
+  
+    <div class="container" style="min-height: 380px;">
+        <div class="befor-body"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<p th:text="${#httpServletRequest.getParameter('message')}" class="text-center">success</p>
+						<ul class="text-center">
+							<li><a th:href="@{/login}" class="btn btn-outline-success mb-2" th:text="#{label.pages.login.title}"><i class="fa fa-arrow-left"></i>login</a></li>
+							
+						</ul>
+					</div>
+				</div>
+		 <div class="befor-body"></div>
+    </div>
+  
+    <footer>
+        <!-- ------------------------------------------------------ -->
+       
+        <div class="bg11">
+            <div class="container size-h-4 flex-c-c p-tb-15">
+                <span class="f1-s-1 cl0 txt-center">
+					
+					<a href="#" class="f1-s-1 cl10 hov-link1">
+                    <script>document.write(new Date().getFullYear());</script>: المؤسسة المحمدية للأعمال الإجتماعية لقضاة وموظفي العدل <i class="fa " aria-hidden="true"></i><a href="#" target="_blank"></a>
+				</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+    <!-- Modal Video 01-->
+    <div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document" data-dismiss="modal">
+            <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+            <div class="wrap-video-mo-01">
+                <div class="video-mo-01">
+                    <iframe src="https://www.youtube.com/watch?v=FgXT0RzKBrc" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/service-animation.js"></script>
+
+</body >
+
+</html>

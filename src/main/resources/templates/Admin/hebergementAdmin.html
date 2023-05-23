@@ -1,0 +1,3943 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>إدارة السكن</title>
+
+<link href="css1/bootstrap.min1.css" rel="stylesheet">
+<link href="css1/bootstrap-rtl.min.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="css1/animate1.css" rel="stylesheet">
+<link href="css1/plugins/dropzone/basic.css" rel="stylesheet">
+<link href="css1/plugins/dropzone/dropzone.css" rel="stylesheet">
+<link href="css1/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+<link href="css1/plugins/codemirror/codemirror.css" rel="stylesheet">
+<link href="css1/style1.css" rel="stylesheet">
+
+</head>
+
+<body class="rtls">
+
+	<div id="wrapper">
+
+		<nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <img alt="image" class="rounded-circle" src="img1/fmj.jpg"/>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="block m-t-xs font-bold">FMJ</span>
+                                <span class="text-muted text-xs block">fondation <b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                <li><a class="dropdown-item" th:href="@{/mailbox}">Mailbox</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" th:href="@{/home.html}">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            FMJ
+                        </div>
+                    </li>
+                    <li>
+                        <a th:href="@{/index}" href=""><i class="fa fa-home"></i> <span class="nav-label">الرئيسية</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">الخدمات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="active"><a th:href="@{/hebergementAdmin}">السكن</a></li>
+                            <li><a href="#" >الصحة</a></li>
+                            <li><a th:href="@{/transportAdmin}">النقل</a></li>
+							<li><a href="#">القروض </a></li>
+							<li><a href="#">المنح</a></li>
+							<li><a href="#"> العمرة</a></li>
+                            <li><a href="#" >التأمين</a></li>
+                            <li><a href="#" >الإصطياف</a></li>
+                            <li><a href="#" >الترفيه</a></li>
+                        </ul>
+                    </li>
+                    
+                     <li class=" ">
+                        <a href="#"><i class="fa fa-building"></i>  <span class="nav-label">المؤسسة</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#">النشأة</a></li>
+                            <li><a href="#" >المهام</a></li>
+                            <li><a href="#">الأهداف والقيم</a></li>
+							<li><a href="#">شركاءنا</a></li>
+                        </ul>
+                    </li>
+                      <li class=" ">
+                        <a href="#"><i class="fa fa-briefcase"></i><span class="nav-label">الإدارة</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#">كلمة المدير العام</a></li>
+                            <li><a href="#" >النصوص القانونية</a></li>
+                            <li><a href="#"> الهياكل التنظيمية</a></li>
+                        </ul>
+                    </li>
+                    
+                     <li class=" ">
+                        <a href="#"><i class="fa fa-sitemap"></i><span class="nav-label">الفروع</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#"> المدن </a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-archive"></i><span class="nav-label">البيانات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a href="#"> الصحافة</a></li>
+                            <li><a th:href="@{/galleryAdmin}" > معرض الصور</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a th:href="@{/videoAdmin}" ><i class="fa fa-camera"></i><span class="nav-label">فيديوهات</span></a>
+                    </li>
+                    
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-paper-plane"></i><span class="nav-label">المنشورات</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a th:href="@{/publicationAdmin}">طلبات العروض</a></li>
+                            <li><a th:href="@{/manachirAdmin}" >مناشير</a></li>
+                            <li><a th:href="@{/publication3Admin}">إعلانات</a></li>
+							<li><a href="#">تساؤلات</a></li>
+							<li><a th:th="@{/mailbox}">شكاوي</a></li>
+                        </ul>
+                    </li>
+                    <li class=" ">
+                        <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">التواصل</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class=" "><a th:href="@{/mailbox}"> الرسائل و الشكايات</a></li>
+   
+							<li><a th:th="@{/mail_compose}">ارسال رسالة</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+            </div>
+        </nav>
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+				<nav class="navbar navbar-static-top" role="navigation"
+					style="margin-bottom: 0">
+					<div class="navbar-header">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom"
+							action="search_results.html">
+							<div class="form-group">
+								<input type="text" placeholder="ابحث عن شيء ما..."
+									class="form-control" name="top-search" id="top-search">
+							</div>
+						</form>
+					</div>
+					<ul class="nav navbar-top-links navbar-right">
+						<li><span class="m-r-sm text-muted welcome-message">مرحبا
+								بكم</span></li>
+						<li class="dropdown"><a class="dropdown-toggle count-info"
+							data-toggle="dropdown" href="#"> <i class="fa fa-envelope"></i>
+								<span class="label label-warning">16</span>
+						</a>
+							<ul class="dropdown-menu dropdown-messages">
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/a7.jpg">
+										</a>
+										<div class="media-body">
+											<small class="float-right">قبل 46 ساعة</small> <strong>Mike
+												Loreipsum</strong> بدأ المتابعة <strong>Monica Smith</strong>. <br>
+											<small class="text-muted">قبل 3 أيام في الساعة 7:58
+												مساءً - 10.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/a4.jpg">
+										</a>
+										<div class="media-body ">
+											<small class="float-right text-navy">قبل 5 ساعات</small> <strong>Chris
+												Johnatan Overtunk</strong>بدأ المتابعة<strong>Monica Smith</strong>.
+											<br> <small class="text-muted">أمس 1:21 مساءً -
+												11.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="dropdown-messages-box">
+										<a class="dropdown-item float-left" href="profile.html"> <img
+											alt="image" class="rounded-circle" src="img1/profile.jpg">
+										</a>
+										<div class="media-body ">
+											<small class="float-right">قبل 23 ساعة</small> <strong>Monica
+												Smith</strong> اعجب <strong>Kim Smith</strong>. <br> <small
+												class="text-muted">قبل يومين الساعة 2:30 ص -
+												11.06.2014</small>
+										</div>
+									</div>
+								</li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="text-center link-block">
+										<a href="mailbox.html" class="dropdown-item"> <i
+											class="fa fa-envelope"></i> <strong>قراءة جميع
+												الرسائل</strong>
+										</a>
+									</div>
+								</li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle count-info"
+							data-toggle="dropdown" href="#"> <i class="fa fa-bell"></i> <span
+								class="label label-primary">8</span>
+						</a>
+							<ul class="dropdown-menu dropdown-alerts">
+								<li><a href="mailbox.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-envelope fa-fw"></i> لديك 16 رسالة <span
+												class="float-right text-muted small">منذ 4 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li><a href="profile.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-twitter fa-fw"></i> 3 متابعين جدد <span
+												class="float-right text-muted small">قبل 12 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li><a href="grid_options.html" class="dropdown-item">
+										<div>
+											<i class="fa fa-upload fa-fw"></i> تم إعادة تشغيل الخادم <span
+												class="float-right text-muted small">منذ 4 دقيقة</span>
+										</div>
+								</a></li>
+								<li class="dropdown-divider"></li>
+								<li>
+									<div class="text-center link-block">
+										<a href="notifications.html" class="dropdown-item"> <strong>انظر
+												جميع التنبيهات</strong> <i class="fa fa-angle-right"></i>
+										</a>
+									</div>
+								</li>
+							</ul></li>
+
+
+						<li><a href="login.html"> <i class="fa fa-sign-out"></i>
+								تسجيل خروج
+						</a></li>
+					</ul>
+
+				</nav>
+			</div>
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-10">
+					<h2>تحميل الملف</h2>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.html">
+								الرئيسية</a></li>
+						<li class="breadcrumb-item"><a>نماذج</a></li>
+						<li class="breadcrumb-item active"><strong>تحميل
+								الملف</strong></li>
+					</ol>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="ibox ">
+							<div class="ibox-title">
+								<h5>مثال لمدخلات الملف</h5>
+							</div>
+							<div class="ibox-content">تتيح لك ميزة إدخال الملف من خلال
+								إنشاء ملف جذاب أو ملف إدخال صورة الحاجيات على أ تمنحك مكتبة
+								الإضافية خيار سحب ملفات السحب.</div>
+						</div>
+					</div>
+				</div>
+				<!-------------------------------Tab Panel----------------------------------->
+				<div class="row m-t-lg">
+					<div class="col-lg-12">
+						<div class="tabs-container gray-bg">
+							<ul class="nav nav-tabs nav-pills">
+								<li><a class="nav-link nav-item active" data-toggle="tab"
+									href="#tab-9"> خدمات السكن(الابناك...)</a></li>
+								<li><a class="nav-link nav-item" data-toggle="tab"
+									href="#tab-10"> القروض المدعمة </a></li>
+								<li><a class="nav-link nav-item" data-toggle="tab"
+									href="#tab-11"> الخدمات البنكية </a></li>
+								<li><a class="nav-link nav-item" data-toggle="tab"
+									href="#tab-12">خدمات المؤسسات العقارية</a></li>
+								<li><a class="nav-link nav-item" data-toggle="tab"
+									href="#tab-13"> خدمات الأبناك التشاركية</a></li>
+
+							</ul>
+							<div class="tab-content">
+								<div id="tab-9" class="tab-pane active">
+									<div class="panel-body">
+										<!-- ----------------second depth TabPanel ------------>
+
+										<div class="content">
+											<div class="tabs-container">
+												<ul class="nav nav-tabs" role="tablist">
+													<li><a class="nav-link active" data-toggle="tab"
+														href="#tab-1"> إضافة بنك</a></li>
+													<li><a class="nav-link" data-toggle="tab"
+														href="#tab-2">إضافة قرض مدعم</a></li>
+													<li><a class="nav-link" data-toggle="tab"
+														href="#tab-3">اضافة خدمة بنكية</a></li>
+													<li><a class="nav-link" data-toggle="tab"
+														href="#tab-4">إضافة مؤسسة عقارية</a></li>
+														<li><a class="nav-link" data-toggle="tab"
+														href="#tab-5">إضافة بنك تشاركي</a></li>
+													<li><a class="nav-link" data-toggle="tab"
+														href="#tab-6">إضافة منتوج عقاري</a></li>
+													<li><a class="nav-link" data-toggle="tab"
+														href="#tab-7">إضافة خدمة بنك تشاركي</a></li>
+												</ul>
+												<div class="tab-content">
+													<div role="tabpanel" id="tab-1" class="tab-pane active">
+														<div class="panel-body">
+
+															<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ
+																				مؤسسة بنكية جديدة إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/Admin/hebergementAdmin/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف المؤسسة:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'Bank'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+
+														</div>
+													</div>
+													<div role="tabpanel" id="tab-2" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفظ قرض مدعم جديد لقاعدة البيانات
+																				  </h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								بالخدمة:</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف ااقرض:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'TypeCredit'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+
+													<div role="tabpanel" id="tab-3" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ
+																				خدمة  بنكية جديدة إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								بالخدمة:</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف الخدمة:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'ServiceBank'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+
+													<div role="tabpanel" id="tab-4" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ
+																				 مؤسسة عقارية  جديدة إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								بالخدمة:</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف الخدمة:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'SocietImmob'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+													
+													<div role="tabpanel" id="tab-5" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ بنك تشاركي
+																				    جديد إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف المؤسسة</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'BankTachroki'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+													
+													
+													<div role="tabpanel" id="tab-6" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ منتوج عقاري
+																				 جديد إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								بالمنتوج</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف المنتوج:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'ProduitImmob'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+													
+													
+													<div role="tabpanel" id="tab-7" class="tab-pane">
+														<div class="panel-body">
+														
+														<div class="row">
+																<div class="col-lg-12">
+																	<!-- -------------------- panel header  ------------------------->
+																	<div class="ibox ">
+																		<div class="ibox-title">
+																			<h4 class="font-weight-bold text-center">حفِظ
+																				خدمة بنك تشاركي جديدة إلى قاعدة البيانات</h4>
+
+																			<div class="ibox-content">
+																				<form action="/saveCodification"
+																					enctype="multipart/form-data" method="post">
+																					<div class="row">
+																						<div class="col-6">
+																							<p class="m-t-sm">صورة المؤسسة المعنية
+																								بالخدمة:</p>
+																							<div class="custom-file">
+																								<input id="logo" type="file" name="file"
+																									class="custom-file-input" /> <label for="logo"
+																									class="custom-file-label">اختر ملف...</label>
+																							</div>
+																						</div>
+																						<div class="col-6">
+																							<div class="form-group ">
+																								<p class="m-t-sm">وصف الخدمة:</p>
+																								<textarea name="commentaire" rows="1" cols="1"
+																									class="form-control" placeholder="...">
+                                                                                               </textarea>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">نوع الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<select class="form-control" id="nomtable"
+																									name="nomTable">
+																									<option>--</option>
+																									<option value="Bank">بنك</option>
+																									<option value="TypeCredit">قرض مدعم</option>
+																									<option value="ServiceBank">خدمة بنكية</option>
+																									<option value="SocietImmob">مؤسسة
+																										عقارية</option>
+																									<option value="BankTachroki">بنك
+																										تشاركي</option>
+																									<option value="ProduitImmob">منتوج
+																										عقاري</option>
+																									<option value="ServiceBankTach">خدمة
+																										بنك تشاركي</option>
+																								</select>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="row">
+																						<div class="col-2">
+																							<p class="m-t-sm">اسم الخمة او المؤسسة :</p>
+																						</div>
+																						<div class="col-10">
+																							<div class="form-group">
+																								<input type="text" name="libelle"
+																									class="form-control">
+																							</div>
+																						</div>
+																					</div>
+																					<div class="form-group mt-2"
+																						style="margin-bottom: -30px;">
+																						<button class="btn btn-info " type="submit">
+																							<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																								class="bold">تحميل&nbsp;&nbsp;</span>
+																						</button>
+																					</div>
+																				</form>
+																			</div>
+																		</div>
+																	</div>
+																	<!-- ---------------------- end panel header ---------------->
+																	<hr>
+
+																	<div class="row">
+
+																		<!-- -------------------content here----------- -->
+																		<div class="col-lg-12">
+																			<h3 class="text-center">لائحة المؤسسات والخدمات</h3>
+																			<table class="table table-bordered">
+																				<thead>
+																					<tr>
+																						<th scope="col" align="center">وصف الخدمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">الصورة</th>
+																						<th scope="col" align="center">تارخ الادراج</th>
+																						<th scope="col" align="center">رقم الستخدم</th>
+																						<th scope="col" align="center">اسم الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">نوع الخمة او
+																							المؤسسة</th>
+																						<th scope="col" align="center">حالة الخدمة او
+																							المؤسسة</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr th:each="codi : ${codification}"
+																						th:id="*{'cd'+{codi.id}}" th:if="*{codi.nomTable} == 'ServiceBankTach'"
+																						th:class="*{codi.supprimer} ? 'table-light' : 'table-danger'">
+																						<td align="center" th:id="*{'comment'+{codi.id}}"
+																							style="width: 200px; height: 150px; position: relative;">[[*{codi.commentaire}]]
+
+																							<button type="button" class="btn btn-primary"
+																								style="bottom: 6px; right: 54px; position: absolute;"
+																								data-toggle="modal"
+																								th:attr="data-target='#Modalcomment'+${codi.id}">
+																								تغيير الوصف</button>
+																							<div class="modal fade"
+																								th:id="*{'Modalcomment'+{codi.id}}"
+																								tabindex="-1" role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير وصف
+																												الخدمة او المؤسسة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'commentForm'+{codi.id}}"
+																												onsubmit="handleChangingComment(event);">
+																												<div class="form-group"
+																													th:id="*{'kk'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اضف وصف جديد</label>
+																													<textarea name="comment" rows="1" cols="1"
+																														class="form-control"
+																														th:id="*{'com'+{codi.id}}"
+																														placeholder="..."
+																														onfocus="handleFocuseComment(event);">
+																				                                    </textarea>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																						<td align="center"><img
+																							th:id="*{'image'+{codi.id}}"
+																							th:src="*{'data:image/jpeg;base64,'+{codi.image}}"
+																							style="width: 100px; height: 60px;"> <br>
+																							<br> <br>
+																							<button type="button"
+																								class="btn btn-primary mt-4" data-toggle="modal"
+																								th:attr="data-target='#ModalImage'+${codi.id}">
+																								تغير الصورة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalImage'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleModalLongTitle">تغيير الصورة</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'imageForm'+{codi.id}}"
+																												onsubmit="handlechangingImage(event);">
+																												<div class="form-group"
+																													th:id="*{'intermidiare'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>اختر صورة</label>
+																													<div class="custom-file"
+																														th:id="*{'tt'+{codi.id}}">
+																														<input th:id="*{'logo'+{codi.id}}"
+																															type="file" name="file"
+																															class="custom-file-input"
+																															onfocus="handlefocus(event);" /> <label
+																															for="logo" class="custom-file-label">اختر
+																															ملف...</label>
+																													</div>
+																													<br> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div></td>
+																						<td align="center">[[*{codi.dateCreation}]]</td>
+																						<td align="center">--</td>
+																						<td align="center">[[*{codi.libelle}]]</td>
+																						<td align="center">[[*{codi.nomTable}]]</td>
+																						<td align="center" th:id="*{'supp'+{codi.id}}">[[*{codi.supprimer}]]
+																							<br>
+																							<button type="button" class="btn btn-primary"
+																								style="margin-top: 105px;" data-toggle="modal"
+																								th:attr="data-target='#ModalStatus'+${codi.id}">
+																								تغير الحالة</button> <!-- Modal -->
+																							<div class="modal fade"
+																								th:id="*{'ModalStatus'+{codi.id}}" tabindex="-1"
+																								role="dialog"
+																								aria-labelledby="exampleModalTitle"
+																								aria-hidden="true">
+																								<div class="modal-dialog modal-dialog-centered"
+																									role="document">
+																									<div class="modal-content">
+																										<div class="modal-header">
+																											<h5 class="modal-title text-center"
+																												id="exampleMTitle">تعير الحالة ، 0 =
+																												غير نشط ، 1 = نشط</h5>
+																											<button type="button" class="close"
+																												data-dismiss="modal" aria-label="Close">
+																												<span aria-hidden="true">&times;</span>
+																											</button>
+																										</div>
+																										<div class="modal-body">
+																											<form th:id="*{'suppForm'+{codi.id}}"
+																												onsubmit="handldechangeStatusSubmit(event);">
+																												<div class="form-group"
+																													th:id="*{'parent'+{codi.id}}">
+																													<input type="hidden" name="id"
+																														class="form-control" th:value="*{codi.id}">
+																													<label>الحالة</label> <input type="number"
+																														min="0" max="1" name="status"
+																														th:id="*{'numb'+{codi.id}}"
+																														onfocus="handlenumberFocuse(event);"
+																														class="form-control"> <br>
+																													<button
+																														class="btn btn-primary form-control"
+																														type="submit">
+																														<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																															class="bold">تحميل</span>
+																													</button>
+																												</div>
+
+																											</form>
+																										</div>
+																										<div class="modal-footer">
+																											<button type="button"
+																												class="btn btn-secondary"
+																												data-dismiss="modal">اغلاق</button>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																		<!-- ------------------------------------------ -->
+
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+													
+												</div>
+
+
+											</div>
+										</div>
+
+										<!-- -------------END SECONG DEPTH PANEL------------ -->
+										<!-- ----------------------------------------------- -->
+
+										<!-- ----------------------------------------------- -->
+
+									</div>
+								</div>
+								<div id="tab-10" class="tab-pane">
+									<div class="panel-body">
+										<!-- ----------------------------------------------- -->
+										<div class="row">
+											<div class="col-lg-12">
+												<!-- -------------------- panel header  ------------------------->
+												<div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">إضافة قرض
+															مدعم لقاعدة البيانات</h4>
+
+														<div class="ibox-content">
+															<form id="creditForm"
+																onsubmit="handleCreditSubmit(event);"
+																enctype="multipart/form-data" method="post">
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">:نسبة د عم القرض(دعم كلي)</p>
+
+																			<input type="text" name="pFullCredit"
+																				class="form-control">
+
+
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">نسبة د عم القرض(دعم جزئي)</p>
+
+																			<input type="text" name="pPartCredit"
+																				class="form-control">
+
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">إسم او نوع القرض:</p>
+																			<select class="form-control" id="typeCredit"
+																				name="typeCredit">
+																				<option>--</option>
+																				<option th:each="credit : ${credit}"
+																					th:value="${credit}">[[${credit}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">المؤسسة او البنك المعني بالقرض
+																				:</p>
+																			<select class="form-control" id="bank" name="bank">
+																				<option>--</option>
+																				<option th:each="bank : ${ BankNames}"
+																					th:value="${bank}">[[*{bank}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="row">
+																	<div class="col-2">
+																		<p class="m-t-sm">وصف القرض :</p>
+																	</div>
+																	<div class="col-10">
+																		<div class="form-group">
+																			<textarea name="commentaire" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<!-- ---------------------- end panel header ---------------->
+												<hr>
+
+												<div class="row">
+
+													<!-- -------------------content here----------- -->
+													<div class="col-lg-12">
+														<h3 class="text-center">لائحة القروض المدعمة</h3>
+														<table class="table table-bordered">
+
+															<thead>
+																<tr>
+																	<th scope="col" align="center">وصف القرض</th>
+																	<th scope="col" align="center">تارخ الادراج</th>
+																	<th scope="col" align="center">رقم الستخدم</th>
+																	<th scope="col" align="center">المؤسسة المعنية
+																		بالقرض</th>
+																	<th scope="col" align="center">إسم او نوع القرض</th>
+																	<th scope="col" align="center">نسبة الدعم الكلي</th>
+																	<th scope="col" align="center">نسبة الدعم الجزئي</th>
+																	<th scope="col" align="center">حالة القرض</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr th:each="credit : ${typeCredit}"
+																	th:id="*{'td'+{credit.id}}"
+																	th:class="*{credit.supprimer} ? 'table-light' : 'table-danger'">
+																	<td align="center"
+																		th:id="*{'creditComment'+{credit.id}}"
+																		style="width: 200px; height: 150px; position: relative;">[[*{credit.commentaire}]]
+
+																		<button type="button" class="btn btn-primary"
+																			style="bottom: 6px; right: 54px; position: absolute;"
+																			data-toggle="modal"
+																			th:attr="data-target='#ModalCreditComment'+${credit.id}">
+																			تغيير الوصف</button>
+																		<div class="modal fade"
+																			th:id="*{'ModalCreditComment'+{credit.id}}"
+																			tabindex="-1" role="dialog"
+																			aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleModalLongTitle">تغيير وصف القرض</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'changeCommentForm'+{credit.id}}"
+																							onsubmit="handleChangingCreditComment(event);">
+																							<div class="form-group"
+																								th:id="*{'CC'+{credit.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{credit.id}">
+																								<label>اضف وصف جديد</label>
+																								<textarea name="comment" rows="1" cols="1"
+																									class="form-control"
+																									th:id="*{'ccom'+{credit.id}}" placeholder="..."
+																									onfocus="handleFocuseCreditComment(event);">
+																				              </textarea>
+																								<br> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td align="center">[[*{credit.dateCreation}]]</td>
+																	<td align="center">--</td>
+																	<td align="center" th:each="codi : ${codification}"
+																		th:if="${codi.id} == *{credit.idBank}">[[*{codi.libelle}]]</td>
+																	<td align="center" th:each="codi : ${codification}"
+																		th:if="${codi.id} == *{credit.idServiceBank}">[[*{codi.libelle}]]</td>
+
+																	<td align="center" th:id="*{'pFullCredit'+{credit.id}}">[[*{credit.pFullCredit}]]
+																		% <br>
+																		<button type="button" class="btn btn-primary"
+																			style="margin-top: 105px;" data-toggle="modal"
+																			th:attr="data-target='#ModalpFull'+${credit.id}">
+																			تغير النسبة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalpFull'+{credit.id}}" tabindex="-1"
+																			role="dialog" aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تغيير نسبة الدعم الكلي</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'fCreditForm'+{credit.id}}"
+																							onsubmit="handldechangeCreditpFullCredit(event);">
+																							<div class="form-group"
+																								th:id="*{'Cparent'+{credit.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{credit.id}">
+																								<label>النسبة الجديدة</label> <input type="text"
+																									name="pFullCredit"
+																									th:id="*{'fredit'+{credit.id}}"
+																									onfocus="handleCreditfFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																	</td>
+																	<td align="center" th:id="*{'pPartCredit'+{credit.id}}">[[*{credit.pPartCredit}]]
+																		% <br>
+																		<button type="button" class="btn btn-primary"
+																			style="margin-top: 105px;" data-toggle="modal"
+																			th:attr="data-target='#ModalpPart'+${credit.id}">
+																			تغير النسبة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalpPart'+{credit.id}}" tabindex="-1"
+																			role="dialog" aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تغيير نسبة الدعم الجزئي</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'pCreditForm'+{credit.id}}"
+																							onsubmit="handldechangeCreditPSubmit(event);">
+																							<div class="form-group"
+																								th:id="*{'pparent'+{credit.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{credit.id}">
+																								<label>النسبة الجديدة</label> <input type="text"
+																									name="pPartCredit"
+																									th:id="*{'pcredit'+{credit.id}}"
+																									onfocus="handleCreditPFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																	</td>
+
+																	<td align="center" th:id="*{'suppCredit'+{credit.id}}">[[*{credit.supprimer}]]
+																		<br>
+																		<button type="button" class="btn btn-primary"
+																			style="margin-top: 105px;" data-toggle="modal"
+																			th:attr="data-target='#ModalCreditStatus'+${credit.id}">
+																			تغير الحالة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalCreditStatus'+{credit.id}}"
+																			tabindex="-1" role="dialog"
+																			aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تعير الحالة ، 0 = غير نشط
+																							، 1 = نشط</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'suppCreditForm'+{credit.id}}"
+																							onsubmit="handldechangeCreditStatusSubmit(event);">
+																							<div class="form-group"
+																								th:id="*{'Sparent'+{credit.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{credit.id}">
+																								<label>الحالة</label> <input type="number"
+																									min="0" max="1" name="status"
+																									th:id="*{'CreditStat'+{credit.id}}"
+																									onfocus="handleCreditStatusFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<!-- ------------------------------------------ -->
+
+												</div>
+											</div>
+										</div>
+										<!-- ----------------------------------------------- -->
+									</div>
+								</div>
+								<div id="tab-11" class="tab-pane">
+									<div class="panel-body">
+
+										<!-- ----------------------------------------------- -->
+										<div class="row">
+											<div class="col-lg-12">
+												<!-- -------------------- panel header  ------------------------->
+
+												<div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">اضافة خدمة
+															بنكية لقاعة البيانات</h4>
+
+														<div class="ibox-content">
+															<form id="serviceBankForm"
+																onsubmit="handleServiceBsubmit(event);">
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">المدة (إختياري)</p>
+
+																			<input type="text" name="pFullCredit"
+																				class="form-control">
+
+
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">الفائدة (إختياري)</p>
+
+																			<input type="text" name="faida" class="form-control">
+
+																		</div>
+																	</div>
+
+																	<div class="col-12">
+																		<div class="form-group">
+																			<p class="m-t-sm">السقف (إختياري)</p>
+
+																			<input type="text" name="sakf" class="form-control">
+
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">إسم او نوع الخدمة:</p>
+																			<select class="form-control" id="serviceBank"
+																				name="serviceBank">
+																				<option>--</option>
+																				<option th:each="service : ${serviceBankLibelle}"
+																					th:value="${service}">[[${service}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">المؤسسة او البنك المعني بالخدمة
+																				:</p>
+																			<select class="form-control" id="bank" name="bank">
+																				<option>--</option>
+																				<option th:each="bank : ${ BankNames}"
+																					th:value="${bank}">[[*{bank}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="row">
+																	<div class="col-2">
+																		<p class="m-t-sm">وصف الخدمة :</p>
+																	</div>
+																	<div class="col-10">
+																		<div class="form-group">
+																			<textarea name="commentaire" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+
+												<!-- ---------------------- end panel header ---------------->
+												<hr>
+
+												<div class="row">
+
+													<!-- -------------------content here----------- -->
+
+
+													<div class="col-lg-12">
+														<h3 class="text-center">لائحة الخدمات البنكية</h3>
+														<table class="table table-bordered">
+
+															<thead>
+																<tr>
+																	<th scope="col" align="center">وصف الخدمة</th>
+																	<th scope="col" align="center">تارخ الادراج</th>
+																	<th scope="col" align="center">رقم الستخدم</th>
+																	<th scope="col" align="center">المؤسسة المعنية</th>
+																	<th scope="col" align="center">إسم او نوع الخدمة</th>
+																	<th scope="col" align="center">المدة</th>
+																	<th scope="col" align="center">الفائدة</th>
+																	<th scope="col" align="center">السقف</th>
+																	<th scope="col" align="center">حالة الخدمة</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr th:each="sBank : ${serviceBank}"
+																	th:id="*{'sd'+{sBank.id}}"
+																	th:class="*{sBank.supprimer} ? 'table-light' : 'table-danger'">
+																	<td align="center" th:id="*{'sBankComment'+{sBank.id}}"
+																		style="width: 200px; height: 150px; position: relative;">[[*{sBank.commentaire}]]
+
+																		<button type="button" class="btn btn-primary"
+																			style="bottom: 6px; right: 54px; position: absolute;"
+																			data-toggle="modal"
+																			th:attr="data-target='#ModalsBankComment'+${sBank.id}">
+																			تغيير الوصف</button>
+																		<div class="modal fade"
+																			th:id="*{'ModalsBankComment'+{sBank.id}}"
+																			tabindex="-1" role="dialog"
+																			aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleModalLongTitle">تغيير وصف القرض</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form
+																							th:id="*{'changesBankCommentForm'+{sBank.id}}"
+																							onsubmit="handleChangingsBankComment(event);">
+																							<div class="form-group"
+																								th:id="*{'SB'+{sBank.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{sBank.id}">
+																								<label>اضف وصف جديد</label>
+																								<textarea name="comment" rows="1" cols="1"
+																									class="form-control"
+																									th:id="*{'SBcom'+{sBank.id}}" placeholder="..."
+																									onfocus="handleFocusesBankComment(event);">
+																				              </textarea>
+																								<br> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td align="center">[[*{sBank.dateCreation}]]</td>
+																	<td align="center">--</td>
+																	<td align="center" th:each="codi : ${codification}"
+																		th:if="${codi.id} == *{sBank.idBank}"
+																		style="width: 100px;">[[*{codi.libelle}]]</td>
+																	<td align="center" th:each="codi : ${codification}"
+																		th:if="${codi.id} == *{sBank.idServiceBank}"
+																		style="width: 100px;">[[*{codi.libelle}]]</td>
+
+																	<td align="center" th:id="*{'modasBank'+{sBank.id}}"
+																		style="width: 100px; height: 150px; position: relative;">[[*{sBank.moda}]]
+																		<br>
+																		<button type="button" class="btn btn-primary"
+																			style="bottom: 6px; right: 14px; position: absolute;"
+																			data-toggle="modal"
+																			th:attr="data-target='#ModalmodasBank'+${sBank.id}">
+																			تغير المدة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalmodasBank'+{sBank.id}}" tabindex="-1"
+																			role="dialog" aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تغيير مدة الخدمة</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'modasBankForm'+{sBank.id}}"
+																							onsubmit="handldechangeModasBank(event);">
+																							<div class="form-group"
+																								th:id="*{'Sparent'+{sBank.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{sBank.id}">
+																								<label>المدة الجديدة</label> <input type="text"
+																									name="moda" th:id="*{'fffredit'+{sBank.id}}"
+																									onfocus="handlesBankModafFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																	</td>
+																	<td align="center" th:id="*{'faidasBank'+{sBank.id}}"
+																		style="width: 100px; height: 150px; position: relative;">[[*{sBank.faida}]]
+																		<br>
+																		<button type="button" class="btn btn-primary"
+																			style="bottom: 6px; right: 14px; position: absolute;"
+																			data-toggle="modal"
+																			th:attr="data-target='#ModalfaidasBank'+${sBank.id}">
+																			تغير االفائدة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalfaidasBank'+{sBank.id}}" tabindex="-1"
+																			role="dialog" aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تغيير نسبة الفائدة</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'faidasBankForm'+{sBank.id}}"
+																							onsubmit="handldechangeFaidasBankSubmit(event);">
+																							<div class="form-group"
+																								th:id="*{'sfparent'+{sBank.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{sBank.id}">
+																								<label>النسبة الجديدة</label> <input type="text"
+																									name="faida" th:id="*{'yyyredit'+{sBank.id}}"
+																									onfocus="handlefaidasBankFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																	</td>
+																	<td align="center" th:id="*{'sakfsBank'+{sBank.id}}">[[*{sBank.sakf}]]
+
+																		<br>
+																		<button type="button" class="btn btn-primary"
+																			style="margin-top: 105px;" data-toggle="modal"
+																			th:attr="data-target='#ModalsakfsBank'+${sBank.id}">
+																			تغير السقف</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalsakfsBank'+{sBank.id}}" tabindex="-1"
+																			role="dialog" aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تغيير السقف</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'sakfsBankForm'+{sBank.id}}"
+																							onsubmit="handldechangesakfsBankSubmit(event);">
+																							<div class="form-group"
+																								th:id="*{'svfparent'+{sBank.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{sBank.id}">
+																								<label>النسبة الجديدة</label> <input type="text"
+																									name="sakf" th:id="*{'yytyyredit'+{sBank.id}}"
+																									onfocus="handlesakfsBankFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+
+																	</td>
+																	<td align="center" th:id="*{'suppsBank'+{sBank.id}}">[[*{sBank.supprimer}]]
+																		<br>
+																		<button type="button" class="btn btn-primary"
+																			style="margin-top: 105px;" data-toggle="modal"
+																			th:attr="data-target='#ModalsBankStatus'+${sBank.id}">
+																			تغير الحالة</button> <!-- Modal -->
+																		<div class="modal fade"
+																			th:id="*{'ModalsBankStatus'+{sBank.id}}"
+																			tabindex="-1" role="dialog"
+																			aria-labelledby="exampleModalTitle"
+																			aria-hidden="true">
+																			<div class="modal-dialog modal-dialog-centered"
+																				role="document">
+																				<div class="modal-content">
+																					<div class="modal-header">
+																						<h5 class="modal-title text-center"
+																							id="exampleMTitle">تعير الحالة ، 0 = غير نشط
+																							، 1 = نشط</h5>
+																						<button type="button" class="close"
+																							data-dismiss="modal" aria-label="Close">
+																							<span aria-hidden="true">&times;</span>
+																						</button>
+																					</div>
+																					<div class="modal-body">
+																						<form th:id="*{'suppsBankForm'+{sBank.id}}"
+																							onsubmit="handldechangesBankStatusSubmit(event);">
+																							<div class="form-group"
+																								th:id="*{'SBBBparent'+{sBank.id}}">
+																								<input type="hidden" name="id"
+																									class="form-control" th:value="*{sBank.id}">
+																								<label>الحالة</label> <input type="number"
+																									min="0" max="1" name="status"
+																									th:id="*{'sBankkStat'+{sBank.id}}"
+																									onfocus="handlesBankStatusFocuse(event);"
+																									class="form-control"> <br>
+																								<button class="btn btn-primary form-control"
+																									type="submit">
+																									<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																										class="bold">تحميل</span>
+																								</button>
+																							</div>
+
+																						</form>
+																					</div>
+																					<div class="modal-footer">
+																						<button type="button" class="btn btn-secondary"
+																							data-dismiss="modal">اغلاق</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+
+													<!-- ------------------------------------------ -->
+
+												</div>
+											</div>
+										</div>
+										<!-- ----------------------------------------------- -->
+
+									</div>
+								</div>
+
+								<div id="tab-12" class="tab-pane">
+									<div class="panel-body">
+
+										<!-- ----------------------------------------------- -->
+										<div class="row">
+											<div class="col-lg-12">
+												<!-- -------------------- panel header  ------------------------->
+												<div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">اضافة خدمة
+															مؤسسة عقارية لقاعدة البيانات</h4>
+
+														<div class="ibox-content">
+															<form id="serviceImmobForm"
+																onsubmit="handleServiceImmobsubmit(event);">
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">االمكان</p>
+
+																			<input type="text" name="localisation"
+																				class="form-control">
+
+
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">التخفيض (إختياري)</p>
+
+																			<input type="text" name="promotion"
+																				class="form-control">
+
+																		</div>
+																	</div>
+
+																</div>
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">إسم او نوع المنتوج:</p>
+																			<select class="form-control" id="produitImmob"
+																				name="produitImmobLibelle">
+																				<option>--</option>
+																				<option th:each="prImmob : ${produitImmobLibelle}"
+																					th:value="${prImmob}">[[${prImmob}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">المؤسسة المعنية بالخدمة :</p>
+																			<select class="form-control" id="ServiceImo"
+																				name="serviceImmobLibelle">
+																				<option>--</option>
+																				<option
+																					th:each="serviceIm : ${ serviceImmobLibelle}"
+																					th:value="${serviceIm}">[[*{serviceIm}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="row">
+																	<div class="col-2">
+																		<p class="m-t-sm">وصف الخدمة :</p>
+																	</div>
+																	<div class="col-10">
+																		<div class="form-group">
+																			<textarea name="commentaire" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<!-- ---------------------- end panel header ---------------->
+												<hr>
+
+												<div class="row">
+
+													<!-- -------------------content here----------- -->
+
+													<h3 class="text-center">لائحة خدمات المؤسسات العقارية</h3>
+													<table class="table table-bordered">
+
+														<thead>
+															<tr>
+																<th scope="col" align="center">وصف الخدمة</th>
+																<th scope="col" align="center">تارخ الادراج</th>
+																<th scope="col" align="center">رقم الستخدم</th>
+																<th scope="col" align="center">المؤسسة المعنية</th>
+																<th scope="col" align="center">إسم المنتوج العقاري</th>
+																<th scope="col" align="center">التخفبض</th>
+																<th scope="col" align="center">المكان</th>
+																<th scope="col" align="center">حالة الخدمة</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr th:each="sImmob : ${serviceImmob}"
+																th:id="*{'si'+{sImmob.id}}"
+																th:class="*{sImmob.supprimer} ? 'table-light' : 'table-danger'">
+																<td align="center"
+																	th:id="*{'sImmobComment'+{sImmob.id}}"
+																	style="width: 200px; height: 150px; position: relative;">[[*{sImmob.commentaire}]]
+
+																	<button type="button" class="btn btn-primary"
+																		style="bottom: 6px; right: 54px; position: absolute;"
+																		data-toggle="modal"
+																		th:attr="data-target='#ModalsImmobComment'+${sImmob.id}">
+																		تغيير الوصف</button>
+																	<div class="modal fade"
+																		th:id="*{'ModalsImmobComment'+{sImmob.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleModalLongTitle">تغيير وصف المؤسسة
+																						العقارية</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form
+																						th:id="*{'changesImmobCommentForm'+{sImmob.id}}"
+																						onsubmit="handleChangingsImmobComment(event);">
+																						<div class="form-group"
+																							th:id="*{'SmB'+{sImmob.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sImmob.id}">
+																							<label>اضف وصف جديد</label>
+																							<textarea name="comment" rows="1" cols="1"
+																								class="form-control"
+																								th:id="*{'SssBcom'+{sImmob.id}}"
+																								placeholder="..."
+																								onfocus="handleFocusesImmobComment(event);">
+																				              </textarea>
+																							<br> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</td>
+																<td align="center">[[*{sImmob.dateCreation}]]</td>
+																<td align="center">--</td>
+																<td align="center" th:each="codi : ${codification}"
+																	th:if="${codi.id} == *{sImmob.idSocietImob}"
+																	style="width: 100px;">[[*{codi.libelle}]]</td>
+																<td align="center" th:each="codi : ${codification}"
+																	th:if="${codi.id} == *{sImmob.idProdImob}"
+																	style="width: 100px;">[[*{codi.libelle}]]</td>
+
+																<td align="center" th:id="*{'pomosImmob'+{sImmob.id}}">[[*{sImmob.promotion}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="margin-top: 105px;" data-toggle="modal"
+																		th:attr="data-target='#ModalpromosImmob'+${sImmob.id}">
+																		تغير التخفيض</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModalpromosImmob'+{sImmob.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تغيير نسبة التخفيض</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'promosImmobForm'+{sImmob.id}}"
+																						onsubmit="handldechangepromosImmob(event);">
+																						<div class="form-group"
+																							th:id="*{'SIMparent'+{sImmob.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sImmob.id}">
+																							<label>المدة الجديدة</label> <input type="text"
+																								name="promotion"
+																								th:id="*{'ffIIfredit'+{sImmob.id}}"
+																								onfocus="handlepromosImmobFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</td>
+																<td align="center" th:id="*{'localisImmob'+{sImmob.id}}"
+																	style="width: 200px; height: 150px; position: relative;">[[*{sImmob.localisation}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="bottom: 6px; right: 54px; position: absolute;"
+																		data-toggle="modal"
+																		th:attr="data-target='#ModallacalisImmob'+${sImmob.id}">
+																		تغير االمكان</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModallacalisImmob'+{sImmob.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تغيير مكان المنتوج</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'localisImmobForm'+{sImmob.id}}"
+																						onsubmit="handldechangelocalisImmobSubmit(event);">
+																						<div class="form-group"
+																							th:id="*{'stttfparent'+{sImmob.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sImmob.id}">
+																							<label>المكان الجديد</label> <input type="text"
+																								name="localisation"
+																								th:id="*{'ytryyredit'+{sImmob.id}}"
+																								onfocus="handlelocalisImmobFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</td>
+
+																<td align="center" th:id="*{'suppsImmob'+{sImmob.id}}">[[*{sImmob.supprimer}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="margin-top: 105px;" data-toggle="modal"
+																		th:attr="data-target='#ModalsImmobStatus'+${sImmob.id}">
+																		تغير الحالة</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModalsImmobStatus'+{sImmob.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تعير الحالة ، 0 = غير نشط
+																						، 1 = نشط</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'suppsImmobForm'+{sImmob.id}}"
+																						onsubmit="handldechangesImmobStatusSubmit(event);">
+																						<div class="form-group"
+																							th:id="*{'SBBBrbparent'+{sImmob.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sImmob.id}">
+																							<label>الحالة</label> <input type="number"
+																								min="0" max="1" name="status"
+																								th:id="*{'sllBankkStat'+{sImmob.id}}"
+																								onfocus="handlesImmobStatusFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+
+													<!-- ------------------------------------------ -->
+
+												</div>
+											</div>
+										</div>
+										<!-- ----------------------------------------------- -->
+
+									</div>
+								</div>
+
+								<div id="tab-13" class="tab-pane">
+									<div class="panel-body">
+
+										<!-- ----------------------------------------------- -->
+										<div class="row">
+											<div class="col-lg-12">
+												<!-- -------------------- panel header  ------------------------->
+												<div class="ibox ">
+													<div class="ibox-title">
+														<h4 class="font-weight-bold text-center">اضافة خدمة
+															بنك تشاركي لقاعدة البيانات</h4>
+
+														<div class="ibox-content">
+															<form id="serviceBTachForm"
+																onsubmit="handleServiceBTachsubmit(event);">
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">االمدة (إختياري)</p>
+
+																			<input type="text" name="moda" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group">
+																			<p class="m-t-sm">هامش الربح(إختياري)</p>
+
+																			<input type="text" name="hamichRib7"
+																				class="form-control">
+
+																		</div>
+																	</div>
+
+																</div>
+																<div class="row">
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">إسم او نوع الخدمة:</p>
+																			<select class="form-control" id="servicebank"
+																				name="serviceBanklibelle">
+																				<option>--</option>
+																				<option
+																					th:each="sBankk : ${serviceBankTachLibelle2}"
+																					th:value="${sBankk}">[[*{sBankk}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-6">
+																		<div class="form-group ">
+																			<p class="m-t-sm">المؤسسة المعنية بالخدمة :</p>
+
+																			<select class="form-control" id="serviceBanktach"
+																				name="serviceBanktachLibelle">
+																				<option>--</option>
+
+																				<option
+																					th:each="seriveTach : ${serviceBankTachLibelle}"
+																					th:value="${seriveTach}">[[${seriveTach}]]</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="row">
+																	<div class="col-2">
+																		<p class="m-t-sm">وصف الخدمة :</p>
+																	</div>
+																	<div class="col-10">
+																		<div class="form-group">
+																			<textarea name="commentaire" rows="1" cols="1"
+																				class="form-control" placeholder="...">
+                                                                           </textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group mt-2"
+																	style="margin-bottom: -30px;">
+																	<button class="btn btn-info " type="submit">
+																		<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																			class="bold">تحميل&nbsp;&nbsp;</span>
+																	</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+												<!-- ---------------------- end panel header ---------------->
+												<hr>
+
+												<div class="row">
+
+													<!-- -------------------content here----------- -->
+
+													<h3 class="text-center">لائحة خدمات الأبناك التشاركية</h3>
+													<table class="table table-bordered">
+
+														<thead>
+															<tr>
+																<th scope="col" align="center">وصف الخدمة</th>
+																<th scope="col" align="center">تارخ الادراج</th>
+																<th scope="col" align="center">رقم الستخدم</th>
+																<th scope="col" align="center">المؤسسة المعنية</th>
+																<th scope="col" align="center">إسم الخدمة</th>
+																<th scope="col" align="center">المدة</th>
+																<th scope="col" align="center">هامش الربح</th>
+																<th scope="col" align="center">حالة الخدمة</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr th:each="sBankT : ${serviceBankTach}"
+																th:id="*{'sBT'+{sBankT.id}}"
+																th:class="*{sBankT.supprimer} ? 'table-light' : 'table-danger'">
+																<td align="center"
+																	th:id="*{'sBankTComment'+{sBankT.id}}"
+																	style="width: 200px; height: 150px; position: relative;">[[*{sBankT.commentaire}]]
+
+																	<button type="button" class="btn btn-primary"
+																		style="bottom: 6px; right: 54px; position: absolute;"
+																		data-toggle="modal"
+																		th:attr="data-target='#ModalsBankTComment'+${sBankT.id}">
+																		تغيير الوصف</button>
+																	<div class="modal fade"
+																		th:id="*{'ModalsBankTComment'+{sBankT.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleModalLongTitle">تغيير وصف خدمة
+																						البنك التشاركي</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form
+																						th:id="*{'changesBankTCommentForm'+{sBankT.id}}"
+																						onsubmit="handleChangingsBankTComment(event);">
+																						<div class="form-group"
+																							th:id="*{'SmTTB'+{sBankT.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sBankT.id}">
+																							<label>اضف وصف جديد</label>
+																							<textarea name="comment" rows="1" cols="1"
+																								class="form-control"
+																								th:id="*{'mSssBcom'+{sBankT.id}}"
+																								placeholder="..."
+																								onfocus="handleFocusesBankTComment(event);">
+																				              </textarea>
+																							<br> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</td>
+																<td align="center">[[*{sBankT.dateCreation}]]</td>
+																<td align="center">--</td>
+																<td align="center" th:each="codi : ${codification}"
+																	th:if="${codi.id} == *{sBankT.idBank}">[[*{codi.libelle}]]</td>
+																<td align="center" th:each="codi : ${codification}"
+																	th:if="${codi.id} == *{sBankT.idServiceBank}">[[*{codi.libelle}]]</td>
+																<td align="center" th:id="*{'modasBankT'+{sBankT.id}}">[[*{sBankT.moda}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="margin-top: 105px;" data-toggle="modal"
+																		th:attr="data-target='#ModalmodasBankT'+${sBankT.id}">
+																		تغير المدة</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModalmodasBankT'+{sBankT.id}}" tabindex="-1"
+																		role="dialog" aria-labelledby="exampleModalTitle"
+																		aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تغيير المدة</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'modasBankTForm'+{sBankT.id}}"
+																						onsubmit="handldechangemodasBankT(event);">
+																						<div class="form-group"
+																							th:id="*{'SIM5parent'+{sBankT.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sBankT.id}">
+																							<label>المدة الجديدة</label> <input type="text"
+																								name="moda" th:id="*{'ffII11f'+{sBankT.id}}"
+																								onfocus="handlemodasBankTFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</td>
+																<td align="center" th:id="*{'ribhsBankT'+{sBankT.id}}">[[*{sBankT.hamichRib7}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="margin-top: 105px;" data-toggle="modal"
+																		th:attr="data-target='#ModalribhsBankT'+${sBankT.id}">
+																		تغير الربح</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModalribhsBankT'+{sBankT.id}}" tabindex="-1"
+																		role="dialog" aria-labelledby="exampleModalTitle"
+																		aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تغيير هامش الربح</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'ribhsBankTForm'+{sBankT.id}}"
+																						onsubmit="handldechangeribhsBankTSubmit(event);">
+																						<div class="form-group"
+																							th:id="*{'s78tfparent'+{sBankT.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sBankT.id}">
+																							<label>هامش الربح الجديد</label> <input
+																								type="text" name="ribh"
+																								th:id="*{'y221dit'+{sBankT.id}}"
+																								onfocus="handleribhsBankTFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</td>
+
+																<td align="center" th:id="*{'suppsBankT'+{sBankT.id}}">[[*{sBankT.supprimer}]]
+																	<br>
+																	<button type="button" class="btn btn-primary"
+																		style="margin-top: 105px;" data-toggle="modal"
+																		th:attr="data-target='#ModalsBankTStatus'+${sBankT.id}">
+																		تغير الحالة</button> <!-- Modal -->
+																	<div class="modal fade"
+																		th:id="*{'ModalsBankTStatus'+{sBankT.id}}"
+																		tabindex="-1" role="dialog"
+																		aria-labelledby="exampleModalTitle" aria-hidden="true">
+																		<div class="modal-dialog modal-dialog-centered"
+																			role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h5 class="modal-title text-center"
+																						id="exampleMTitle">تعير الحالة ، 0 = غير نشط
+																						، 1 = نشط</h5>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">
+																					<form th:id="*{'suppsBankTForm'+{sBankT.id}}"
+																						onsubmit="handldechangesBankTStatusSubmit(event);">
+																						<div class="form-group"
+																							th:id="*{'SBB8arbparent'+{sBankT.id}}">
+																							<input type="hidden" name="id"
+																								class="form-control" th:value="*{sBankT.id}">
+																							<label>الحالة</label> <input type="number"
+																								min="0" max="1" name="status"
+																								th:id="*{'s15BankkStat'+{sBankT.id}}"
+																								onfocus="handlesBankTStatusFocuse(event);"
+																								class="form-control"> <br>
+																							<button class="btn btn-primary form-control"
+																								type="submit">
+																								<i class="fa fa-upload"></i>&nbsp;&nbsp;<span
+																									class="bold">تحميل</span>
+																							</button>
+																						</div>
+
+																					</form>
+																				</div>
+																				<div class="modal-footer">
+																					<button type="button" class="btn btn-secondary"
+																						data-dismiss="modal">اغلاق</button>
+
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+
+													<!-- ------------------------------------------ -->
+
+												</div>
+											</div>
+										</div>
+										<!-- ----------------------------------------------- -->
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="float-right">
+							<!--     10GB من  <strong>250GB</strong> -->
+							|مجانا <strong>10 جيجا من 250 جيجا مجانا </strong>
+						</div>
+						<div>
+							<strong>شركة حقوق الطبع والنشر</strong> مثال &copy;© 2014-2018
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Mainly scripts -->
+			<script src="js1/jquery-3.1.1.min.js" type="text/javascript"></script>
+			<script src="js1/popper.min.js" type="text/javascript"></script>
+			<script src="js1/bootstrap.js" type="text/javascript"></script>
+			<script src="js1/plugins/metisMenu/jquery.metisMenu.js"
+				type="text/javascript"></script>
+			<script src="js1/plugins/slimscroll/jquery.slimscroll.min.js"
+				type="text/javascript"></script>
+
+			<script src="js1/api/ajaxhebergementAdministration.js"
+				type="text/javascript"></script>
+
+			<!-- Custom and plugin javascript -->
+			<script src="js1/inspinia.js" type="text/javascript"></script>
+			<script src="js1/plugins/pace/pace.min.js" type="text/javascript"></script>
+
+			<!-- Jasny -->
+			<script src="js1/plugins/jasny/jasny-bootstrap.min.js"
+				type="text/javascript"></script>
+
+			<!-- DROPZONE -->
+			<script src="js1/plugins/dropzone/dropzone.js" type="text/javascript"></script>
+
+			<!-- CodeMirror -->
+			<script src="js1/plugins/codemirror/codemirror.js"
+				type="text/javascript"></script>
+			<script src="js1/plugins/codemirror/mode/xml/xml.js"
+				type="text/javascript"></script>
+
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

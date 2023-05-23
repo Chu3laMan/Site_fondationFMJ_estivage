@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> الإدارة : الهياكل التنظيمية</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+      <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header th:replace="home :: header">
+    </header>
+
+    <!-- ------------------------- HEADER END------------------------------->
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+             <div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+                <span class="text-uppercase cll2 p-r-8"> 
+			   		<div class="f2-s-1 p-r-30 m-tb-6">
+				
+				<a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;margin-right: -32px;">الإدارة</a>
+				<i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+				 <span style="font-size:15px;font-family: KacstTitle;">
+					الهياكل التنظيمية
+				</span>
+            </div>
+            </span>
+        </div>
+        
+            <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+                <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page heading -->
+    <div class="befor-body container"></div>
+    <div class="container p-t-4 p-b-35">
+        <h2 class="f1-l-1 cl2" style="color:black;font-family:KacstTitle">
+            الهياكل التنظيمية
+        </h2>
+    </div>
+
+    <!-- Content -->
+    <section class="bg0 p-b-110">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-8 p-b-30">
+                    <div class="p-r-10 p-r-0-sr991">
+                        <span style="color: black;font-size:20px;font-weight: bold;">تتكون هياكل المؤسسة من :</span>
+                        <br>
+                        <div class="col-sm gr-btn-center" data-toggle="buttons">
+                            <button class="btn bt btn-warning-outline active btn1">مجلس التوجيه والمراقبة</button>
+                            <button class="btn bt btn-warning-outline btn2">اللجنة الإدارية</button>
+                            <button class="btn bt btn-warning-outline btn3">اللجان الجهوية</button>
+                            <button class="btn bt btn-warning-outline btn4">لجنة التدقيق</button>
+                        </div>
+                        <div class="separater"></div>
+                        <div class="card card-shadow">
+                            <div class="card-block">
+                                <div class="para1 para show" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                                    <span class="red">مجلس التوجيه والمراقبة</span>
+                                    <br>
+                                    <p>
+                                        يترأسه وزير العدل ويعمل على تحديد استراتيجية عمل المؤسسة، وتوجهاتها العامة واختياراتها ذات الأولوية في انجاز مهامها, ويتكون أعضاء المجلس طبقا للمادة 6 من القانون المحدث للمؤسسة المحمدية من :
+                                    </p>
+                                    <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                        <li><strong>●وزير العدل رئيسا</strong></li>
+                                        <li><strong>●المندوب العام لإدارة السجون إعادة والإدماج.</strong></li>
+                                        <li><strong>●الكاتب العام لوزارة العدل.</strong></li>
+                                        <li><strong>●مدير الموارد البشرية لوزارة العدل.</strong></li>
+                                        <li><strong>●المدير المكلف بالعمل الاجتماعي والثقافي بالمندوبية العامة لإدارة السجون وإعادة الإدماج.</strong></li>
+                                        <li><strong>●مدير الميزانية والمراقبة لوزارة العدل.</strong></li>
+                                        <li><strong>●ممثلين اثنين عن الودادية الحسنية للقضاة من بينهم رئيس الودادية.</strong></li>
+                                        <li><strong>●ممثلين اثنين عن ودادية موظفي العدل من بينهم رئيس الودادية.</strong></li>
+                                        <li><strong>●ممثل عن الوزارة المكلفة بالمالية.</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="para2 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red">اللجنة الإدارية</span>
+                            <br>
+                            <p> تتألف اللجنة الإدارية طبقا للمادة 11 من نص القانون المحدث للمؤسسة من :</p>
+                            <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                <li><strong>●المدير العام للمؤسسة.</strong></li>
+                                <li><strong>●الكاتب العام للمؤسسة.</strong></li>
+                                <li><strong>●ممثل عن الودادية الحسنية للقضاة.</strong></li>
+                                <li><strong>●ممثل عن ودادية موظفي العدل.</strong></li>
+                                <li><strong>●ممثل عن الوزارة المكلفة بالعدل.</strong></li>
+                                <li><strong>●ممثل عن المندوبية العامة لإدارة السجون وإعادة الإدماج.</strong></li>
+                                <li><strong>●ممثل عن الوزارة المكلفة بالمالية.</strong></li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="para3 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red">اللجان الجهوية</span>
+                            <br>
+                            <p>الفروع الجهوية: تمثل المؤسسة على صعيد كل محكمة استئناف، وتنفذ قرارات مجلس التوجيه والمراقبة والمدير العام للمؤسسة، كما تسهر على تطبيق وتتبع برامج أنشطة المؤسسة .
+                            </p>
+                            <p>تتكون من :</p>
+                            <ul class="idara-list" style="color: black;font-size:16px;font-weight: bold;">
+                                <li><strong>●المدير المنتدب.</strong></li>
+                                <li><strong>●ممثل عن الودادية الحسنية للقضاة.</strong></li>
+                                <li><strong>●ممثل عن ودادية موظفي العدل.</strong></li>
+                                <li><strong>●ممثل عن المندوبية العامة لإدارة السجون وإعادة الإدماج.</strong></li>
+                                <li><strong>●المدير الفرعي الجهوي لدى محكمة الاستئناف.</strong></li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="para4 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                            <span class="red">لجنة التدقيق</span>
+                            <br>
+                            <p>تتكون هذه اللجنة ” طبقا للمادة 18 من القانون المحدث للمؤسسة من:</p>
+                            <ul style="color: black;font-size:16px;font-weight: bold;">
+                                <li><strong>●مراقب للدولة.</strong></li>
+                                <li><strong>●ثلاثة خبراء محاسبين مقيدين بالهيئة الوطنية للخبراء المحاسبين يعينون من قبل الوزير المكلف بالمالية.</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-5 col-lg-4 p-b-30">
+                    <div class="p-l-10 p-rl-0-sr991 p-t-5">
+                        <!-- Popular Posts -->
+                        <div>
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>الإدارة</strong>
+                                </h3>
+                            </div>
+                            <ul class="p-t-35">
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side1.jpg" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{idara1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">كلمة المدير العام</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side2.jpg" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{/idara2.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">النصوص القانونية</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-30">
+                                    <a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+                                        <img src="images/side/side4.png" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-11">
+                                        <h6 class="p-b-4">
+                                            <a th:href="@{/idara3.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                                <strong class="side-link">الهياكل التنظيمية</strong>
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="home :: footer">
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+</body>
+
+</html>

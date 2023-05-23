@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>خدماتنا : التأمين </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+     <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header th:replace="home :: header">
+
+        <!-- -------------------  HEADER END  ------------------------------------->
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+            <!-- --------------------------- -->
+            <div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+                <span class="text-uppercase cll2 p-r-8"> 
+			 
+			<div class="f2-s-1 p-r-30 m-tb-6">
+				<a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;margin-right: -32px;">الخدمات</a>
+				<i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+				 <span style="font-size:15px;font-family: KacstTitle;">
+                       التأمين     
+				</span>
+            </div>
+
+            </span>
+        </div>
+
+        <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+            <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+            <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Content -->
+    <div class="befor-body container"></div>
+    <section class="bg0 p-b-140 p-t-10">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8 p-b-30">
+                    <div class="p-r-10 p-r-0-sr991">
+
+                        <!-- Blog Detail -->
+                        <div class="p-b-70">
+                            <h2 style="color:black;font-family:KacstTitle; font-size:32px;margin-bottom: 20px;">
+                                التأمين
+                            </h2>
+                            <div class="wrap-pic-max-w p-b-30" style="margin-bottom: -15px;">
+                                <img src="images/service55_1.jpg" alt="IMG">
+                            </div>
+
+                            <div class="p-r-10 p-r-0-sr991">
+                                <div class="col-sm gr-btn-center" data-toggle="buttons">
+                                    <button class="btn btn-warning-outline active btn1" style="background-color:#008000;width:350px">التأمين التكميلي عن المرض</button>
+                                    <button class="btn btn-warning-outline btn2" style="background-color:#008000;width:350px">التأمين على الوفاة</button>
+                                </div>
+                                <div class="separater"></div>
+                                <div class="card card-shadow" id="1" style="background-color: #ebebeb">
+
+                                    <div class="card-block text-xs-center">
+
+                                        <div class="para1 para show" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                                            <div class="titre_section">
+                                                <h4 class="red" style="color: #ff0000;font-size:20px;font-weight: bold;">التأمين التكميلي عن المرض:</h4>
+                                            </div>
+                                            <div class="detail_section">
+                                                <p>
+                                                    توفر المؤسسة بالمجان لجميع منخرطيها، العاملين بقطاعي العدل والسجون، تغطية صحية إضافية للنظام التعاضدي وذلك في إطار عقد تأمين صحي تكميلي مبرم مع إحدى الشركات المتخصصة في المجال، يمكنهم هذا العقد من استرجاع كل أو جزء من مصاريف العلاج التي تترتب على عاتقهم
+                                                    بعد إسقاط الجزء الذي يتحمله النظام التعاضدي وذلك في حدود الشروط والالتزامات التعاقدية.
+                                                    <br>
+                                                    <br>
+                                                    <strong style="color:#a47bbe;"> - موضوع الضمانة</strong><br>&nbsp;&nbsp;&nbsp;&nbsp; استرجاع الفرق ما بين المصاريف المدفوعة في العلاج في حدود 250 % من التعريفة الوطنية المرجعية TNR والمصاريف التي يؤديها
+                                                    أو يتحملها الصندوق الوطني لمنظمات الاحتياط الاجتماعي CNOPS.<br>
+                                                    <strong style="color:#a47bbe;"> - المستفيدون</strong><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - المنخرط<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - الزوج(ة)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - الأبناء إلى غاية
+                                                    21 سنة وإلى غاية 26 سنة إذا كانوا متمدرسين<br><br>
+                                                    <strong style="color:#a47bbe;">- الخدمات الطبية المؤمنة</strong><br> 1- جميع الخدمات الطبية التي يتحملها الصندوق الوطني لمنظمات الاحتياط الاجتماعي يضمنها عقد التأمين التكميلي عن المرض بدون استثناء، في
+                                                    حدود الشروط والالتزامات التعاقدية.
+                                                    <br> 2- خدمات إضافية غير مشمولة بالتغطية الصحية الأساسية الإجبارية تم تفعيلها ( برسم سنة 2019 )
+                                                    <br>
+                                                    <div style="margin-right:20px;     direction: rtl;">
+                                                        <strong>
+أ- استرجاع %80 من مصاريف الأدوية الموصوفة عن طريق الطبيب المعالج والمتوفرة على سعر البيع للعموم (PPV) وغير مدرجة بلائحة الأدوية المقبولة للتعويض المحددة من طرف الوكالة الوطنية للتأمين الصحي (َANAM)
+                                 </strong>
+                                                        <br>
+                                                        <strong>
+ب- استرجاع  %80 من مصاريف الكشوفات الاشعاعية (التشخيصات بالأشعة)، غير المدرجة بالمصنف العام للأعمال المهنية (nomenclature générale des actes professionnels) المحددة
+
+من طرف وزارة الصحة والمعتمد كمرجع لتحديد وحساب تعريفة الأعمال والعلاجات الطبية المقدمة من طرف الممارسين للمهن الطبية.
+                                 </strong>
+                                                        <br>
+                                                        <strong>
+ج- استرجاع مصاريف الفحص بالتصوير المقطعي بالإصدار البوزيتروني أو ما يعرف Pet-scan في حدود فحصين اثنين في السنة وسقف 10 آلاف درهم لكل فحص.
+                                 </strong>
+                                                    </div>
+
+                                            </div>
+
+
+                                            <br>
+
+                                            <table width="100%" style="font-family:MyriadArabic; color:1b5ca9; font-size: 23px;">
+                                                <tr height="40px">
+                                                    <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%">العلاجات الطبية والجراحية</td>
+                                                    <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%">الحالات الخاصة</td>
+                                                </tr>
+                                                <tr height="60px">
+                                                    <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                        <div class="txttab">1. العلاجات المتنقلة:<br>&nbsp;&nbsp;&nbsp;&nbsp; • استشارة الطبيب وزيارة الطبيب<br>&nbsp;&nbsp;&nbsp;&nbsp; • الخدمات شبه الطبية<br>&nbsp;&nbsp;&nbsp;&nbsp; • الفحوصات الإشعاعية والتحاليل البيولوجية<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            • الأدوية<br> 2. الأمراض المزمنة والمكلفة<br> 3. الإستشفاءات الطبية والجراحية
+                                                        </div>
+                                                    </td>
+                                                    <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                        <div class="txttab">
+                                                            . زجاج وإطار النظارات والعدسات اللاصقة<br> . علاج وتعويض وتقـويم الأسنـان<br> . الكشف بالسكانير والكشف بالرنين المغناطيسي <br> . الترويض الطبي<br> . الرمامة السمعية . أجهزة التقويم الطبي وأجهزة
+                                                            الترميم الخارجية <br> . الحامات الاستشفائية واللقاحات
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <br>
+                                            <center>
+                                                <table width="100%" style="max-width:835px; font-family:MyriadArabic; color:1b5ca9; font-size: 23px;">
+                                                    <tr height="40px">
+                                                        <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%"><strong>شروط الانخراط</strong></td>
+                                                        <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                            <div class="txttab">تعبئة استمارة الانخراط الخاصة وإرفاقها بالوثائق المطلوبة ووضعها لدى وكيل شركة التأمين أو إرسالها إلى إدارة المؤسسة </div>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr height="40px">
+                                                        <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%"><strong>التصريح بملفات المرض</strong></td>
+                                                        <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                            <div class="txttab"> التصريح بنسخة من الملف الطبي مستوفيا لجميع الوثائق لدى وكيل شركة التأمين القريب من مقر العمل أو مقر السكنى داخل أجل لا يتعدى ثلاثة أشهر.</div>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr height="40px">
+                                                        <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%"><strong>أداء الاسترجاعات</strong></td>
+                                                        <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                            <div class="txttab"> عن طريق تحويل بنكي في الحساب الخاص للمنخرط، داخل أجل أقصاه 20 يوما ابتداء من اليوم الموالي لتوصل الشركة بنسخة من الملف الطبي مستوفيا لجميع الوثائق المطلوبة </div>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr height="40px">
+                                                        <td style="background-color:#cdd9e8;" valign="middle" align="center" width="50%"><strong>تتبع الملفات المصرح بها</strong></td>
+                                                        <td style="background-color:#b6c9e0;" valign="middle" align="right">
+                                                            <div class="txttab">عن طريق الولوج إلى موقع شركة التأمين على الأنترنيت<br> </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </center>
+
+                                            <br><br>
+                                            <img src="images/foto/santé/img1.png" style="width:100%;     max-width: 996px;  ">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="para2 para hide completly-hidden" aria-hidden="true" style= "padding-right: 20px; padding-left: 20px;">
+                                    <div class="titre_section">
+                                        <h4 class="red" style="color: #ff0000;font-size:20px;font-weight: bold;"> التأمين على الوفاة:</h4>
+                                    </div>
+                                    <div class="detail_section">
+                                        <p>
+                                            تؤمن المؤسسة بالمجان منخرطيها الراغبين في الانضمام الى عقد التأمين على الوفاة وذلك في حدود رأسمال مؤمن إجباري بقيمة 40 ألف درهم يصرف لفائدة ذوي الحقوق في حالة وفاة المنخرط أو إصابته بعجز كلي. كما يتيح هذا العقد للراغبين في الرفع من الرأسمال المؤمن إمكانية
+                                            اكتتاب رأسمال تكميلي (اختياري) على أساس تحمل قسط الاشتراك المتعلق بالمبلغ الإضافي المرغوب فيه.</p>
+                                        <p>هذا، ووعيا منها بوضعية المتقاعدين، عملت المؤسسة كذلك على الرفع من سن استفادة المتقاعدين التابعين لقطاعي العدل والسجون من التأمين عن الوفاة من 66 سنة إلى 70 سنة.</p>
+
+                                    </div>
+                                    <div class="detail_section">
+                                        <div class="tabstat2">
+                                            <table border="2" width="100%">
+                                                <tr>
+                                                    <td width="92" class="ccc2">
+                                                        <p dir="RTL"><strong style="color: black;font-size:20px;font-weight: bold;">موضوع الضمانة</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="362" colspan="2" class="ccc1">
+                                                        <p dir="RTL"><strong>-   أداء الرأسمال المكتتب لفائدة ذوي حقوق المتوفى أو المستفيدين المعينين من طرفه   في استمارة الانخراط</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>- أداء الرأسمال المؤمن للمنخرط   في حالة إصابته بعجز كلي</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="92" class="ccc2">
+                                                        <p dir="RTL"><strong>الرأسمال المؤمن</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="362" colspan="2" class="ccc1">
+                                                        <p dir="RTL"><strong>1.   الرأسمال الإجباري:</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>  -الصيغة السابقة (لازال معمول بها): 000 20   درهم</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>  -الصيغة الحالية: 000 40 درهم</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>2. الرأسمال الاختياري:  من 000 10 كحد أدنى  إلى 000 460 درهم كحد أقصى</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>3. السقف الأعلى للرأسمال(1+2):   000 500 درهم</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="92" class="ccc2">
+                                                        <p dir="RTL"><strong>&nbsp;</strong></p>
+                                                        <p dir="RTL"><strong>وثائق وكيفية     الانخراط</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="362" colspan="2" class="ccc1">
+                                                        <p dir="RTL"><strong>-تعبئة   استمارة الانخراط الخاصة</strong><span dir="LTR"> </span><strong><span dir="LTR"><span dir="LTR"> </span>  </span></strong><span dir="RTL"> </span><strong><span dir="RTL"> </span> وإرسالها إلى إدارة المؤسسة مرفقة ب: </strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>- نسخة من بطاقة التعريف الوطنية</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>-إذن بالاقتطاع من المنبع لقسط الاشتراك   المقابل للرأسمال التكميلي المرغوب في اكتتابه مصادق على صحة إمضائه</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="92" class="ccc2">
+                                                        <p dir="RTL"><strong>&nbsp;</strong></p>
+                                                        <p dir="RTL"><strong>&nbsp;</strong></p>
+                                                        <p dir="RTL"><strong>وثائق تصفية الرأسمال</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="362" colspan="2" class="ccc1">
+                                                        <p dir="RTL"><strong>1-رسم   الوفاة</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>2-عقد الإراثة</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>3-شهادة طبية تبين سبب الوفاة</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>4-نسخة من بطاقة التعريف الوطنية   للمرحوم</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>5-نسخة من ٍبطاقة التعريف   الوطنية للمستفيدين</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>6-شهادة الانتماء</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="92" rowspan="2" class="ccc2">
+                                                        <p dir="RTL"><strong>&nbsp;</strong></p>
+                                                        <p dir="RTL"><strong>&nbsp;</strong></p>
+                                                        <p dir="RTL"><strong>المستفيدون من الرأسمال المؤمن في حال الوفاة</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="135" class="ccc2">
+                                                        <p dir="RTL"><strong>المستفيدون من الرأسمال الإجباري</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="227" class="ccc2">
+                                                        <p dir="RTL"><strong>المستفيدون من الرأسمال الاختياري</strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="135" class="ccc1">
+                                                        <p dir="RTL"><strong>حسب   الترتيب:</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>1-الأرمل(ة)                                                              </strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>2-أو الأبناء                                                           </strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>3-أو الوالدين</strong><br>
+                                                            <strong>4-او   الاخوة</strong><br>
+                                                            <strong>5-او   ذوي الحقوق</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span> </strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                    <td width="227" class="ccc1">
+                                                        <p dir="RTL"><span dir="LTR"> </span><strong><span dir="LTR"><span dir="LTR"> </span>-</span></strong><span dir="RTL"> </span><strong><span dir="RTL"> </span> الأشخاص المحددون من قبل   المرحوم، قيد حياته، في الاستمارة الشخصية للانخراط.</strong><strong><span dir="LTR"> </span></strong><br>
+                                                            <span dir="RTL"> </span><strong><span dir="RTL"> </span>2-ذوي الحقوق (الورثة): حسب بيان   الانخراط وبناء على أحكام مدونة التأمين ويوزع عليهم بالتساوي أو وفق أحكام   الشريعة الإسلامية حسب الحالة </strong><strong><span dir="LTR"> </span></strong></p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <br>
+                                        <table class="idara1">
+                                            <tbody>
+                                                <tr>
+                                                    <th width="500px" style="text-align: right; color: #950095;font-size:20px;font-weight: bold;">منشور تعميم التأمين على الوفاة</th>
+                                                    <th width="500px" style="align-items: left;">
+                                                        <a href="docs/santé1.pdf" target="_blank"><img src="images/telecharger.png" alt="img"></a>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                         <div class="separater"></div>
+                                        <br> <br>
+                                    </div>
+                                    <br>
+                                    <center>
+                                        <img src="images/foto/santé/img2.png" style="width:100%; max-width:600px; ">
+                                    </center>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Share -->
+                            <div class="flex-s-s">
+                                <span class="f1-s-12 cl5 p-t-1 m-r-15">
+									شارك على:
+								</span>
+
+                                <div class="flex-wr-s-s size-w-0">
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-facebook-f m-r-7"></i> Facebook
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-twitter m-r-7"></i> Twitter
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-google-plus-g m-r-7"></i> Google+
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-pinterest-p m-r-7"></i> Pinterest
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Leave a comment -->
+                        <div>
+                            <h4 class="f1-l-4 cl3 p-b-12">
+                                إترك تعليق
+                            </h4>
+
+                            <p class="f1-s-13 cl8 p-b-40">
+                                سنحافظ على خصوصية بريدك الإلكتروني . المرجو تعبئة كل الخانت
+                            </p>
+
+                            <form>
+                                <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="..."></textarea>
+
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="الإسم*">
+
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="البريد الإلكتروني*">
+
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="website" placeholder="الموقع الإلكتروني">
+
+                                <button class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+									أضف تعليق
+								</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+
+                <div class="col-md-10 col-lg-4 p-b-30">
+                    <div class="p-l-10 p-rl-0-sr991 p-t-70">
+                        <!-- Category -->
+                        <div class="p-b-60">
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									خدماتنا
+								 </strong>
+                                </h3>
+                            </div>
+
+                            <ul class="p-t-35">
+                            	<li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/hebergem.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										السكن
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/santé.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										الصحة
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/transport1.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										النقل 
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/préts1.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										القروض 
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/assurances.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										التامين 
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/bourse.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										 المنح
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/3omra.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										العمرة
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/centre-été.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										مراكز الإصطياف
+									</a>
+                                </li>
+                                <li class="how-bor3 p-rl-4" style="background-color: #eeeeee">
+                                    <a th:href="@{/divertissement1.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										الترفيه
+									</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="home :: footer">
+
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>عن المؤسسة</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	 <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition" onload=display_ct();>
+	
+	<!-- Header -->
+	<header th:replace="home :: header">
+	</header>
+
+	<!-- ------------------------- HEADER END------------------------------->
+	<!-- Breadcrumb -->
+	<div class="container">
+		<div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+			<div class="f2-s-1 p-r-30 m-tb-6">
+				<a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;margin-right: -32px;">الرئيسية</a>
+				<i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+				 <span style="font-size:15px;font-family: KacstTitle;">
+					عن المؤسسة
+				</span>
+			</div>
+
+			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Page heading -->
+	<div class="befor-body container"></div>
+	<div class="container p-t-4 p-b-35">
+		<h2 class="f1-l-1 cl2" style="color:black;font-family:KacstTitle">
+			عن المؤسسة
+		</h2>
+	</div>
+
+	<!-- Content -->
+	<section class="bg0 p-b-110">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-8 p-b-30">
+					<div class="p-r-10 p-r-0-sr991">
+					   <span style="color: black;font-size:20px;font-weight: bold;">عن المؤسسة</span>
+					   <br>
+						<p>تشكل المؤسسة المحمدية دعامة أساسية للنهوض بالأوضاع الاجتماعية للعاملين بقطاعي العدل والسجون، من خلال توفيرها لخدمات اجتماعية أساسية وأنشطة متنوعة. ولكي تقوم بالدور المنوط بها تعمل المؤسسة جاهدة على توفير الموارد المالية الضرورية، والموارد البشرية المتخصصة في مجال التسيير، ونهج أساليب التدبير الحديثة. حتى تتمكن من تنفيذ برامجها الاجتماعية المسطرة في الاستراتيجية العامة الموضوعة من قبل أجهزتها المؤسساتية، فتربح الرهان...
+						</p>
+					</div>
+				</div>
+				
+				<!-- Sidebar -->
+				<div class="col-md-5 col-lg-4 p-b-30">
+					<div class="p-l-10 p-rl-0-sr991 p-t-5">
+						<!-- Popular Posts -->
+						<div th:fragment="service">
+							<div class="how2 how how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									<strong>خدماتنا</strong>
+								</h3>
+							</div>
+
+							<ul class="p-t-35">
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service11.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{hebergem.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">السكن</strong>
+											</a>
+										</h6>
+									</div>
+								</li>
+
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service22.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/santé.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">الصحة</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service33.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/transport1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">النقل</strong>
+											</a>
+										</h6>
+									</div>
+								</li>
+								
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service10.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/centre-été.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">الإصطياف</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+								  <li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service44.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/préts1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">القرض</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service55.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/assurances.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">التأمين</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service99.png" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/bourse.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">المنح</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service88.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/3omra.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">الحج</strong>
+											</a>
+										</h6>	
+									</div>
+								</li>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/service77.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a th:href="@{/divertissement.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<strong class="side-link">الترفيه</strong>
+											</a>
+										</h6>	
+									</div>
+								</li> 
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer th:replace="home :: footer">	
+	</footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+		</span>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+</body>
+</html>

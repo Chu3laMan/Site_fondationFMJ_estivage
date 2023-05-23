@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>الرئيسية</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ========================================================================================== -->
+    <link type="text/css" href="css/slide.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/iconic/css/material-design-iconic-font.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/animsition/css/animsition.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/util.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header th:fragment="header">
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <div class="topbar">
+                <div class="content-topbar container h-100">
+                    <div class="left-topbar">
+                        <span class="left-topbar-item flex-wr-s-c" id="ct">	
+						</span>
+
+                        <a th:href="@{/about.html}" class="left-topbar-item">
+						 عن المؤسسة 	
+						</a>
+
+                        <a th:href="@{/contact.html}" class="left-topbar-item">
+						تواصل معنا	
+						</a>
+
+                        <a th:href="@{/registration.html}" class="left-topbar-item">
+						 الإنخراط
+						</a>
+
+                        <a th:href="@{/login}" class="left-topbar-item">
+						  تسجيل الدخول
+						</a>
+                    </div>
+
+                    <div class="right-topbar">
+                        <a href="https://www.facebook.com/fmjsc/" target="_blanck">
+                            <span class="fab fa-facebook-f"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-twitter"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-pinterest-p"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-vimeo-v"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-youtube"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Mobile -->
+            <div class="wrap-header-mobile">
+                <!-- Button show menu -->
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+                    <span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+                    </span>
+                </div>
+                <!-- Logo moblie -->
+                <div class="logo-mobile">
+                    <a th:href="@{/home.html}"><img src="images/icons/logo-fmjj.png" alt="IMG-LOGO" class="img-logo-mobile"></a>
+                </div>
+
+
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="menu-mobile">
+                <ul class="topbar-mobile">
+                    <li class="left-topbar">
+                        <span class="left-topbar-item flex-wr-s-c" id="ct">
+							
+						</span>
+                    </li>
+
+                    <li class="left-topbar">
+                        <a th:href="@{/about}" class="left-topbar-item">
+						عن المؤسسة	
+						</a>
+
+                        <a th:href="@{/contact}" class="left-topbar-item">
+						إتصل بنا
+						</a>
+
+                        <a th:href="@{/registration.html}" class="left-topbar-item">
+							الإنخراط
+						</a>
+
+                        <a th:href="@{/login}" class="left-topbar-item">
+							 تسجيل الدخول
+						</a>
+                    </li>
+
+                    <li class="right-topbar">
+                        <a href="#">
+                            <span class="fab fa-facebook-f"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-twitter"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-pinterest-p"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-vimeo-v"></span>
+                        </a>
+
+                        <a href="#">
+                            <span class="fab fa-youtube"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="main-menu-m">
+                    <li>
+                        <a th:href="@{/home.html}">الرئيسية</a>
+                    </li>
+
+                    <li>
+                        <a href="#">المؤسسة</a>
+                         <ul class="sub-menu-m">
+                            <li class="li-second"><a th:href="@{/fondation-na.html}">النشأة</a></li>
+                            <li class="li-second"><a th:href="@{/fondation-ma.html}">المهام</a></li>
+                            <li class="li-second"><a th:href="@{/fondation-vm.html}">الأهداف والقيم</a></li>
+                            <li class="li-second li-last"><a th:href="@{/fondation-is.html}">شركاءنا</a></li>
+                        </ul>
+
+                        <span class="arrow-main-menu-m">
+							<i  class="fa fa-angle-left"aria-hidden="true"></i>
+						</span>
+                    </li>
+
+                    <li>
+                        <a href="#">الإدارة</a>
+                         <ul class="sub-menu-m">
+                            <li class="li-second"><a th:href="@{/idara1.html}">كلمة المدير العام</a></li>
+                            <li class="li-second"><a th:href="@{/idara2.html}">النصوص القانونية</a></li>
+                            <li class="li-second li-last"><a th:href="@{/idara3.html}">الهياكل التنظيمية</a></li>
+                        </ul>
+
+                        <span class="arrow-main-menu-m">
+							<i  class="fa fa-angle-left"aria-hidden="true"></i>
+						</span>
+                    </li>
+
+                    <li>
+                        <a href="#service">الخدمات</a>
+                    </li>
+
+                    <li>
+                        <a href="#foro3">الفروع</a>
+                    </li>
+
+                    <li>
+                        <a href="#">البيانات</a>
+                         <ul class="sub-menu-m">
+                            <li class="li-second"><a th:href="@{/press1.html}">الصحافة </a></li>
+                            <li class="li-second li-last"><a th:href="@{/galerie_photos.html}">معرض الصور</a></li>
+                        </ul>
+
+                        <span class="arrow-main-menu-m">
+							<i  class="fa fa-angle-left"aria-hidden="true"></i>
+						</span>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/videos.html}">فيدوهات</a>
+                    </li>
+
+                    <li class="last-item-li">
+                        <a href="#">المنشورات</a>
+                        <ul class="sub-menu-m">
+                            <li class="li-second"><a th:href="@{/publication1.html}">طلبات العروض</a></li>
+                            <li class="li-second"><a th:href="@{/publication2.html}">مناشير</a></li>
+                            <li class="li-second"><a th:href="@{/publication3.html}">إعلانات</a></li>
+                            <li class="li-second"><a th:href="@{/publication4.html}">تساؤلات</a></li>
+                            <li class="li-second li-last"><a th:href="@{/publication5.html}">شكاوي</a></li>
+                        </ul>
+
+                        <span class="arrow-main-menu-m">
+							<i  class="fa fa-angle-left"aria-hidden="true"></i>
+						</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!--  -->
+            <div class="wrap-logo no-banner container">
+                <div class="logo">
+                    <a th:href="@{/home.html}"><img class="logo-img1" src="images/icons/logoRM.png" alt="LOGO"></a>
+                    <a th:href="@{/home.html}"><img class="logo-img2" src="images/icons/logo-fmjj.png" alt="LOGO"></a>
+                    <a th:href="@{/home.html}"><img class="logo-img3" src="images/icons/img3.png" alt="LOGO"></a>
+                    
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="wrap-main-nav">
+                <div class="main-nav">
+                    <!-- Menu desktop -->
+                    <nav class="menu-desktop">
+                        <a class="logo-stick" th:href="@{/index.html}">
+                            <img src="images/icons/logo-fmjj.png" alt="LOGO">
+                        </a>
+
+                        <ul class="main-menu">
+                            <li class="main-menu-active">
+                                <a th:href="@{/home.html}">الرئيسية</a>
+
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a class="with" th:href="@{/home.html}">المؤسسة</a>
+
+                                <div class="sub-mega-menu">
+                                    <div class="nav flex-column nav-pills" role="tablist">
+                                        <a class="nav-link active" th:href="@{/fondation-na.html}" role="tab">النشأة</a>
+                                        <a class="nav-link" th:href="@{/fondation-ma.html}" role="tab"> المهام</a>
+                                        <a class="nav-link" th:href="@{/fondation-vm.html}" role="tab">الأهداف والقيم</a>
+                                        <a class="nav-link" th:href="@{/fondation-is.html}" role="tab">شركاءنا</a>
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="news-0" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/fondation-na.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/fondation/11.jpg" alt="IMG" style=" length:520px ; length:400px">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/fondation-na.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	تحت العرعاية السامية لجلالة الملك تم تأسيس المؤسسة ...
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/fondation-ma.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/fondation/2.jpg" alt="IMG" style=" length:520px ; length:400px">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/fondation-ma.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	مختلف مهام المؤسسة 
+																</a>
+                                                            </h5>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/fondation-vm.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/fondation/1.jpg" alt="IMG" style=" length:520px ; length:400px">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/fondation-vm.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الأهداف والقيم التي من أجلها أنشئت المؤسسة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/fondation-is.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/fondation/4.jpg" alt="IMG" style=" length:520px ; length:400px">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/fondation-is.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	أهم شركاء المؤسسة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="news-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/fondation-vm.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الأهداف والقيم التي من أجلها أنشئت المؤسسة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="news-2" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="news-3" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="news-4" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="news-5" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a class="with" href="#">الإدارة</a>
+
+                                <div class="sub-mega-menu">
+                                    <div class="nav flex-column nav-pills" role="tablist">
+                                        <a class="nav-link active" th:href="@{/idara1.html}" role="tab">كلمة المدير العام</a>
+                                        <a class="nav-link" th:href="@{/idara2.html}" role="tab">النصوص القانونية</a>
+                                        <a class="nav-link" th:href="@{/idara3.html}" role="tab">الهياكل التنظيمية</a>
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="enter-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/idara1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/idara/chef.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/idara1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																  كلمة السيد  "مصطفى دح دوح" المدير العام للمؤسسة 
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/idara2.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/idara/1.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/idara2.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	النصوص القانوية :الخطاب الملكي 29 ينير 2003 
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/idara3.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/idara/3.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/idara3.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الهياكل التنظيمية ومختلف اللجان المكونة للمؤسسة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/idara2.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/idara/2.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/idara2.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+														              النصوص القانونية : القانون 39.09
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="enter-2" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane" id="enter-3" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+
+                                                                </a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a class="with" href="#">الخدمات</a>
+
+                                <div class="sub-mega-menu">
+                                    <div class="nav flex-column nav-pills" role="tablist">
+                                        <a class="nav-link active" th:href="@{/hebergem.html}" role="tab">السكن</a>
+                                        <a class="nav-link" th:href="@{/santé.html}" role="tab">الصحة</a>
+                                        <a class="nav-link" th:href="@{/transport1.html}" role="tab">النقل</a>
+                                        <a class="nav-link" th:href="@{/préts1.html}" role="tab">القروض</a>
+                                        <a class="nav-link" th:href="@{/bourse.html}" role="tab">المنح</a>
+                                        <a class="nav-link" th:href="@{/3omra.html}" role="tab">العمرة</a>
+                                        <a class="nav-link" th:href="@{/assurances.html}" role="tab">التأمين</a>
+                                        <a class="nav-link" th:href="@{/centre-été.html}" role="tab">الإصطياف</a>
+                                        <a class="nav-link" th:href="@{/divertissement1.html}" role="tab">الترفيه</a>
+
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="business-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{hebergem.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/1.png" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/hebergem.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	دعم مجال السكن
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/santé.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/2.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/santé.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الإسعاف والنقل الطبي
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/transport1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/5.png" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/transport1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	تقديم خدامات النقل
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/préts1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/7.png" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/préts1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	طرق الإستفادة من القروض من الإستهلاكية
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane show active" id="business-2" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/4.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	منح لفائدة منخرطي المؤسسة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/6.png" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	منشور عمرة شعبان
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/assurances.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/8.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/assurances.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	مختلف  خدمات التأمين
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/centre-été.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/services/3.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/centre-été.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	شبكة مراكز الإستجمام و الإصطياف عبر التراب الوطني
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a class="with" href="#">الفروع</a>
+
+                                <div class="sub-mega-menu">
+                                    <div class="nav flex-column nav-pills" role="tablist">
+                                        <a class="nav-link active" data-toggle="pill" href="#travel-1" role="tab">المدن</a>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="travel-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/marrakech.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	مراكش
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/fes.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	فاس
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/rabat.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الرباط
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/martil.jpg" alt="IMG">
+                                                        </a>
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	مارتيل
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane show active" id="travel-2" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/fnideq.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	الفنيدق
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/SAIDIa-1.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	السعيدية
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/stat.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	سطات
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/villes/titmelil.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	تط مليل
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a class="with" href="#">البيانات</a>
+
+                                <div class="sub-mega-menu">
+                                    <div class="nav flex-column nav-pills" role="tablist">
+
+                                        <a class="nav-link active" th:href="@{/press1.html}" role="tab">الصحافة</a>
+
+                                        <a class="nav-link" th:href="@{/galerie_photos.html}" role="tab">معرض الصور</a>
+
+                                    </div>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="life-1" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <!-- Item post -->
+                                                    <div>
+                                                        <a th:href="@{/press1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/press/1.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/press1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	مجلس التوجيه والمراقبة
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <!-- Item post  -->
+                                                    <div>
+                                                        <a th:href="@{/press1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/press/5.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	معرض الكتاب
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post  -->
+                                                    <div>
+                                                        <a th:href="@{/press1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/press/3.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/press1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	تسليم الجوائز للفائزين في دوري رمضان 
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <!-- Item post  -->
+                                                    <div>
+                                                        <a th:href="@{/press1.html}" class="wrap-pic-w hov1 trans-03">
+                                                            <img src="images/nav-photo/press/4.jpg" alt="IMG">
+                                                        </a>
+
+                                                        <div class="p-t-10">
+                                                            <h5 class="p-b-5">
+                                                                <a th:href="@{/press1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	دوري رمضان
+																</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="mega-menu-item">
+                                <a th:href="@{/videos.html}">فيديوهات</a>
+                            </li>
+
+                            <li>
+                                <a class="with" href="#">المنشورات</a>
+                                <ul class="sub-menu">
+                                    <li><a th:href="@{publication1.html}" class="nav-link">طلبات العروض</a></li>
+                                    <li><a th:href="@{/publication2.html}" class="nav-link">مناشير</a></li>
+                                    <li><a th:href="@{/publication3.html}" class="nav-link">إعلانات</a></li>
+                                    <li><a th:href="@{/publication4.html}" class="nav-link">تساؤلات</a></li>
+                                    <li><a th:href="@{/publication5.html}" class="nav-link">شكاوي</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ------------------------------- HEADER END ----------------------->
+    <!-- Headline -->
+   
+    <div class="container">
+        <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+			<div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+				<span class="text-uppercase cll2" style="padding-right: 2px;"> الجديد: </span>
+				<div class="js-conveyor-1">
+					<ul>
+						<li th:each="feed : ${news}" class="ml-4">
+						<a th:href="@{/akhbar/{id}(id=${feed.id})}"  style="margin-right: 3px; font-size: 16px; font-family: MyriadArabic;color: #343a40;font-weight: 600;"> 
+						   <span>
+						     [[${feed.description}]]
+							</span>
+						  </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+                <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature post -->
+    <section class="bg0">
+        <div class="container">
+            <div class="befor-body"></div>
+            <!---------------------------------- SLIDER ---------------------------->
+			<div id="siteCaousel" class="carousel slide carousel-fade"
+				data-ride="carousel"
+				style=" max-width:100%;
+                 background-color: rgb(249, 252, 255);">
+				<ol class="carousel-indicators">
+					<li th:each="nb , stats :${numberOfSliders}" data-target="#siteCaousel"
+					th:attr="data-slide-to=''+${stats.index} " 
+					 th:class="${stats.index} ? '' : 'active' "></li>
+				</ol>
+				<div class="carousel-inner" style="height:300px;">
+					<div th:each="img ,stats : ${images}" 
+					  th:class="${stats.index} ? 'carousel-item' : 'carousel-item active' ">
+						<img class="d-block w-100"
+							th:src="*{'data:image/jpeg;base64,'+{img.image}}"
+							th:alt="*{img.description}">
+
+						<div class="carousel-caption d-none d-md-block">
+							
+							<p>[[*{img.description}]]</p>
+						</div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#siteCaousel"
+					role="button" data-slide="prev"> <span
+					class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+					class="sr-only">سابقا</span>
+				</a> <a class="carousel-control-next" href="#siteCaousel"
+					role="button" data-slide="next"> <span
+					class="carousel-control-next-icon" aria-hidden="true"></span> <span
+					class="sr-only">التالي</span>
+				</a>
+			</div>
+		
+			<!-- ---------------------------------------------------- -->
+            <div class="befor-body" style="margin-top: 12px;"></div>
+    
+            <div class="row m-rl--1 mb-n" id="service">
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima1" style="background-image: url(images/service11.jpg);">
+                        <a th:href="@{/hebergem.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display1 div-color1">
+                            <h3 class="text-to-display text-color1">السكن</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/hebergem.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								السكن
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima2" style="background-image: url(images/service22.jpg);">
+                        <a th:href="@{/santé.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display2 div-color2">
+                            <h3 class="text-to-display text-color2">الصحة</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/santé.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								الصحة
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima3" style="background-image: url(images/service33.jpg);">
+                        <a th:href="@{/transport1.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display3 div-color3">
+                            <h3 class="text-to-display text-color3">النقل</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/transport1.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								النقل
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima4" style="background-image: url(images/service44.jpg);">
+                        <a th:href="@{/préts1.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display4 div-color4">
+                            <h3 class="text-to-display text-color4">القروض</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/préts1.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								القروض
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima5" style="background-image: url(images/service55.jpg);">
+                        <a th:href="@{/assurances.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display5 div-color5">
+                            <h3 class="text-to-display text-color5">التأمين</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/assurances.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								التأمين
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima6" style="background-image: url(images/service66.jpg);">
+                        <a th:href="@{/centre-été.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display6 div-color6">
+                            <h3 class="text-to-display text-color6">الإصطياف</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/centre-été.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								الإصطياف
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima7" style="background-image: url(images/service99.png);">
+                        <a th:href="@{/centre-été.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display7 div-color7">
+                            <h3 class="text-to-display text-color7">المنح</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/centre-été.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								المنح
+							</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 p-rl-1 p-b-2">
+                    <div class="bg-img1 size-a-12 how1 pos-relative anima8" style="background-image: url(images/service88.jpg);">
+                        <a th:href="@{/centre-été.html}" class="dis-block how1-child1 trans-03"></a>
+                        <div class="div-to-display8 div-color8">
+                            <h3 class="text-to-display text-color8">العمرة</h3>
+                        </div>
+                        <div class="flex-col-e-s s-full p-rl-25 p-tb-11">
+                            <a th:href="@{/centre-été.html}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								العمرة
+							</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Post -->
+    <section class="bg0 p-t-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="p-b-20">
+                        <!-- Entertainment  -->
+                        <div class="p-b-20">
+                            <div class="how2 how how2-cl1 flex-sb-c m-r-10 m-r-0-sr991">
+                                <h3 class="f1-m-2 cl12 tab01-title" id="loisir">
+                                    <strong>
+									الترفيه
+								  </strong>
+                                </h3>
+                                <a href="#" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+									مشاهدة الكل
+									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+								</a>
+                            </div>
+                            <div class="row p-t-35">
+                                <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                    <!-- Item post -->
+                                    <div class="m-b-30">
+                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                            <img src="images/service77.jpg" alt="IMG">
+                                        </a>
+                                        <div class="p-t-20">
+                                            <p style="font-size: 22px;color:black;">
+                                                <strong>
+													تنظم المؤسسة مجموعة من الأنشطة الثقافيية والرفيهة...
+												</strong>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                                    <!-- Item post -->
+                                    <div class="flex-wr-sb-s m-b-30">
+                                        <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                            <img src="images/service7-11.jpg" alt="IMG  ">
+                                        </a>
+                                        <div class="size-w-2">
+                                            <h5 class="p-b-5">
+                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+													 التشجيع على القراءة
+												</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <!-- Item post -->
+                                    <div class="flex-wr-sb-s m-b-30">
+                                        <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                            <img src="images/service7-22.jpg" alt="IMG  ">
+                                        </a>
+                                        <div class="size-w-2">
+                                            <h5 class="p-b-5">
+                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+													 ملتقيات ثقافية و ترفيهية
+												</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item post -->
+                                    <div class="flex-wr-sb-s m-b-30">
+                                        <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                            <img src="images/service7-33.jpg" alt="IMG  ">
+                                        </a>
+                                        <div class="size-w-2">
+                                            <h5 class="p-b-5">
+                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+													تنظيم ورشات 
+												</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Other -->
+                        <div class="row" id="fondation">
+                            <!-- Business -->
+                            <div class="col-sm-6 p-r-25 p-r-15-sr991 p-b-25">
+                                <div class="how2 how how2-cl2 flex-sb-c m-b-35">
+                                    <h3 class="f1-m-2 cl13 tab01-title">
+                                        <strong>
+									نشأة المؤسسة	
+									</strong>
+                                    </h3>
+                                    <a th:href="@{/fondation-na.html}" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+										مشاهدة الكل
+										<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+									</a>
+                                </div>
+                                <!-- Main Item post -->
+                                <div class="m-b-30">
+                                    <a href="#" class="wrap-pic-w hov1 trans-03">
+                                        <img src="images/fondation11.jpg" alt="IMG">
+                                    </a>
+                                    <div class="p-t-20">
+                                        <p style="font-size: 22px;color:black;">
+                                            <strong>
+												احدثت المؤسسة المحمدية تحت الرئاسة الشرفية لجلالة الملك بظهير شريف رقم 1.11.143 الصادر في 16 رمضان 1432 الموافق ل 17 غشت 2011، أعقبه القانون رقم 39.09 القاضي بإحداث وتنظيم المؤسسة. 
+										   </strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/nav-photo/idara/chef.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+					                        الشخصية المعنوية  											
+					                        </a>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/maktaba/3.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												الإستقلال المالي
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Technology -->
+                            <div class="col-sm-6 p-r-25 p-r-15-sr991 p-b-25">
+                                <div class="how2 how how2-cl6 flex-sb-c m-b-35">
+                                    <h3 class="f1-m-2 cl18 tab01-title">
+                                        <strong>
+										مهام المؤسسة
+									</strong>
+                                    </h3>
+                                    <a th:href="@{fondation-ma.html}" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+										مشاهدة الكل
+										<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+									</a>
+                                </div>
+                                <!-- Main Item post -->
+                                <div class="m-b-30">
+                                    <a href="#" class="wrap-pic-w hov1 trans-03">
+                                        <img src="images/fondation22.png" alt="IMG">
+                                    </a>
+                                    <div class="p-t-20">
+                                        <p style="font-size: 22px;color:black;">
+                                            <strong>
+												التحفيز على إنشاء التعاونيات والمساعدة على تأسيسها وتمويلها وتدبيرها في إطار اتفاقيات؛
+											    برام اتفاقيات مع الهيئات العامة والخاصة المكلفة بالتهيئة والبناء قصد بناء مساكن لفائدة المنخرطين و منح قروض
+											     ...
+										        </strong>
+                                        </p>
+                                        <br>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/maktaba/2.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												 التنظيم والتسيير
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/maktaba/4.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												 التنظيم المالي والمراقبة
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Life Style -->
+                            <div class="col-sm-6 p-r-25 p-r-15-sr991 p-b-25">
+                                <div class="how2 how how2-cl5 flex-sb-c m-b-35">
+                                    <h3 class="f1-m-2 cl17 tab01-title">
+                                        <strong>
+									 الأهداف والقيم
+									</strong>
+                                    </h3>
+                                    <a th:href="@{/fondation-vm.html}" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+										مشاهدة الكل
+										<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+									</a>
+                                </div>
+                                <!-- Main Item post -->
+                                <div class="m-b-30">
+                                    <a href="#" class="wrap-pic-w hov1 trans-03">
+                                        <img src="images/fondation44.jpg" alt="IMG">
+                                    </a>
+                                    <div class="p-t-20">
+                                        <p style="font-size: 22px;color:black;">
+                                            <strong>
+											احداث وتدبير كل المشاريع الهادفة الى انجاز أعمال اجتماعية الاجتماعية لفائدة قضاة وموظفي قطاعي العدل والسجون   والمستخدمين بالمؤسسات التابعة .. الخ… 
+											</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/nav-photo/fondation/3.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												مواصلة أداء دور المؤسسة في خدمة المنخرط
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/nav-photo/fondation/2.jpg" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												احترام اختيارات المنخرط
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fashion -->
+                            <div class="col-sm-6 p-r-25 p-r-15-sr991 p-b-25">
+                                <div class="how2 how how2-cl6 flex-sb-c m-b-35">
+                                    <h3 class="f1-m-2 cl18 tab01-title">
+                                        <strong>
+									 شركاءنا	
+									</strong>
+                                    </h3>
+                                    <a th:href="@{/fondation-is.html}" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+										مشاهدة الكل
+										<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+									</a>
+                                </div>
+                                <!-- Main Item post -->
+                                <div class="m-b-30">
+                                    <a href="#" class="wrap-pic-w hov1 trans-03">
+                                        <img src="images/fondation33.png" alt="IMG">
+                                    </a>
+                                    <div class="p-t-20">
+                                        <p style="font-size: 22px;color:black;">
+                                            <strong>
+												تربط المؤسسة المحمدية علاقة شراكة وتعاون مع مجموعة من المؤسسات والشركات سواء تعلق الأمر بالمؤسسات البنكية أو الشركات العقارية أو شركات النقل أو المراكز الثقافية .
+											</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/maktaba/6.png" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												مؤسسات بنكية
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- Item post -->
+                                <div class="flex-wr-sb-s m-b-30">
+                                    <a href="#" class="size-w-1 wrap-pic-w hov1 trans-03">
+                                        <img src="images/maktaba/7.png" alt="IMG  ">
+                                    </a>
+                                    <div class="size-w-2">
+                                        <h5 class="p-b-5">
+                                            <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												منعشين عقاريين
+											</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Travel  -->
+                        <div class="p-b-25 p-r-10 p-r-0-sr991">
+                            <div class="how2 how how2-cl3 flex-s-c">
+                                <h3 class="f1-m-2 cl14 tab01-title">
+                                    <strong>
+									مكتبة الوسائط
+								  </strong>
+                                </h3>
+                            </div>
+                            <div class="flex-wr-sb-s p-t-35">
+                                <div class="size-w-6 w-full-sr575">
+                                    <!-- Item post -->
+                                    <div class="m-b-30">
+                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                            <img src="images/nav-photo/press/1.jpg" alt="IMG">
+                                        </a>
+                                        <div class="p-t-25">
+                                            <!-- <a href="#" class="f1-m-3 cl2 hov-cl10 trans-03"> -->
+                                            <p style="font-size: 22px;color:black;">
+                                                <strong>
+													 
+													 توقيع  اتفاقيات شراكة
+												</strong>
+                                            </p>
+                                            <p class="f1-s-1 cl6 p-t-18">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="size-w-7 w-full-sr575">
+                                    <!-- Item post -->
+                                    <div class="m-b-30">
+                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                            <img src="images/nav-photo/press/5.jpg" alt="IMG">
+                                        </a>
+                                        <div class="p-t-10">
+                                            <h5 class="p-b-5">
+                                                <a href="#" class="f1-s-5 cl3 hov-cl10 trans-03">
+												معرض الصور
+												</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <!-- Item post -->
+                                    <div class="m-b-30">
+                                        <a href="#" class="wrap-pic-w hov1 trans-03">
+                                            <img src="images/nav-photo/press/3.jpg" alt="IMG">
+                                        </a>
+                                        <div class="p-t-10">
+                                            <h5 class="p-b-5">
+                                                <a th:href="@{/press1.html}" class="f1-s-5 cl3 hov-cl10 trans-03">
+													الصحافة
+												</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-4">
+                    <div class="p-l-10 p-rl-0-sr991 p-b-20">
+                        <!-- Stay Connected -->
+                        <div class="p-b-35">
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									إبق على إتصال 
+								 </strong>
+                                </h3>
+                            </div>
+                            <ul class="p-t-35">
+                                <li class="flex-wr-sb-c p-b-20">
+                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-facebook fs-16 cl0 hov-cl0">
+                                        <span class="fab fa-facebook-f"></span>
+                                    </a>
+                                    <div class="size-w-3 flex-wr-sb-c">
+                                        <!-- <span class="f1-s-8 cl3 p-r-20">
+											6879 Fans
+										</span> -->
+
+                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											تابعنا على الفيسبوك
+										</a>
+                                    </div>
+                                </li>
+                                <li class="flex-wr-sb-c p-b-20">
+                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
+                                        <span class="fab fa-twitter"></span>
+                                    </a>
+                                    <div class="size-w-3 flex-wr-sb-c">
+
+                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											تابعنا على تويتر
+										</a>
+                                    </div>
+                                </li>
+                                <li class="flex-wr-sb-c p-b-20">
+                                    <a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-youtube fs-16 cl0 hov-cl0">
+                                        <span class="fab fa-youtube"></span>
+                                    </a>
+                                    <div class="size-w-3 flex-wr-sb-c">
+                                        <a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											اشتراك
+										</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Most Popular -->
+                        <div class="p-b-30">
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									المنشورات
+								   </strong>
+                                </h3>
+                            </div>
+                            <ul class="p-t-35">
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        1
+                                    </div>
+                                    <a th:href="@{/publication1.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										طلبات العروض
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        2
+                                    </div>
+                                    <a th:href="@{/publication2.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										مناشير
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        3
+                                    </div>
+                                    <a th:href="@{/publication3.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										إعلانات
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        4
+                                    </div>
+                                    <a th:href="@{/publication4.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										تساؤلات
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
+                                        5
+                                    </div>
+
+                                    <a th:href="@{/publication5.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										شكاوي
+									</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- ---------------ADDED -------- -->
+                        <div class="p-b-30" id="idara">
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									الإدارة
+								  </strong>
+                                </h3>
+                            </div>
+                            <ul class="p-t-35">
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        1
+                                    </div>
+                                    <a th:href="@{/idara1.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										كلمة المدير العام
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        2
+                                    </div>
+                                    <a th:href="@{/idara2.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										النصوص القانونية
+									</a>
+                                </li>
+                                <li class="flex-wr-sb-s p-b-22">
+                                    <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+                                        3
+                                    </div>
+
+                                    <a th:href="@{/idara3.html}" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										الهياكل التنظيمية
+									</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!---------------------------------------------------  -->
+                        <div class="flex-c-s p-t-8 p-b-65">
+                            <a href="#">
+                                <img class="max-w-full" src="images/banner-02.jpg" alt="IMG">
+                            </a>
+                        </div>
+                        <!-- Video -->
+                        <div class="p-b-55">
+                            <div class="how2 how how2-cl4 flex-s-c m-b-35">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    فيديو
+                                </h3>
+                            </div>
+                            <div>
+                                <div class="wrap-pic-w pos-relative">
+                                    <img src="images/video-01.jpg" alt="IMG">
+
+                                    <button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03" data-toggle="modal" data-target="#modal-video-01">
+										<span class="fab fa-youtube"></span>
+									</button>
+                                </div>
+                                <div class="p-tb-16 p-rl-25 bg3">
+                                    <p style="font-size: 22px;color:#fff;">
+                                        <strong>
+											افتتاح مركب اصطياف تابع للمؤسسة المحمدية للأعمال الاجتماعية لقضاة وموظفي العدل 
+										
+                                     </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Subscribe -->
+                        <div class="bg10 p-rl-35 p-t-28 p-b-35 m-b-55">
+                            <h5 class="f1-m-5 cl0 p-b-10">
+                                اشترك
+                            </h5>
+
+                            <p class="f1-s-1 cl0 p-b-25">
+                                الحصول على جميع أحدث المحتوى تسليمها إلى البريد الإلكتروني الخاص بك بضع مرات في الشهر
+                            </p>
+
+                            <form class="size-a-9 pos-relative">
+                                <input class="s-full f1-m-6 cl6 plh9 p-l-20 p-r-55" type="text" name="email" placeholder="البريد الإلكتروني">
+
+                                <button class="size-a-10 flex-c-c ab-t-r fs-16 cl9 hov-cl10 trans-03">
+									<i class="fa fa-arrow-right"></i>
+								</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest -->
+    <section class="bg0 p-t-50 p-b-90">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8 p-b-50">
+                    <div class="p-r-10 p-r-0-sr991">
+                        <div class="how2 how how2-cl4 flex-s-c">
+                            <h3 class="f1-m-2 cl33 tab01-title">
+                                <strong>
+							 فروع المؤسسة
+							</strong>
+                            </h3>
+                        </div>
+                        <div class="p-b-40">
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/fes.jpg" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											فاس : مركز الاصطياف والاستجمام بفاس بعد تدشينه 
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+                                        تم تدشين المركب الإصطيافي بفاس الذي أشرفت على أشغاله وزارة العدل والحريات بمتابعة من المؤسسة المحمدية للأعمال الإجتماعية لقضاة وموظفي العدل لاستكمال خريطة مراكز الاستجمام بعد تلك المتواجدة في كل من الرباط ومراكش وأكادير وافران ومارتيل والفنيدق والسعيدية
+                                        وتيط مليل.
+                                    </p>
+
+                                    <a href="http://sncid.com/portail/index.php/newsurg/news/634-fmjfes.html" class="f1-s-1 cl9 hov-cl10 trans-03" target="_blank">
+									اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/sidi-bouzid.png" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											سيدي بوزيد :إقامة لوازيس
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+                                        الشقق المكتراة
+                                    </p>
+                                    <a href="https://reservation.fmj.ma/home" class="f1-s-1 cl9 hov-cl10 trans-03">
+										اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/marakech.jpg" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											مراكش : افتتاح مركب الاصطياف التابع للمؤسسة المحمدية للأعمال الاجتماعية لقضاة وموظفي العدل بمراكش ، بعد انتهاء عملية إعادة تهيئته 
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+                                        أوجار يشرف على افتتاح مركب الاصطياف التابع للمؤسسة المحمدية للأعمال الاجتماعية لقضاة وموظفي العدل بمراكش ، بعد انتهاء عملية إعادة تهيئته...
+                                    </p>
+                                    <a href="http://www.sawtaladala.com/2019/03/%D8%A3%D9%88%D8%AC%D8%A7%D8%B1-%D9%8A%D8%B4%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%85%D8%B1%D9%83%D8%A8-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%8A%D8%A7%D9%81-%D8%A7%D9%84/" class="f1-s-1 cl9 hov-cl10 trans-03"
+                                        target="_blanck">
+										اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/ifran.png" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											افران : إقامة فرح إين
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24"> الشقق المكتراة
+                                    </p>
+                                    <a href="https://reservation.fmj.ma/home" class="f1-s-1 cl9 hov-cl10 trans-03" target="_blanck">
+										اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/titmelil.jpg" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											تيط مليل : مركز تيط مليل 
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+                                    </p>
+                                    <a href="#" class="f1-s-1 cl9 hov-cl10 trans-03">
+										اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/agadir.png" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											أكادير : مركز أكادير
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+                                    </p>
+                                    <a href="#" class="f1-s-1 cl9 hov-cl10 trans-03">
+									اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                            <!-- Item post -->
+                            <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                <a href="#" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                    <img src="images/cities/medyek.png" alt="IMG">
+                                </a>
+                                <div class="size-w-9 w-full-sr575 m-b-25">
+                                    <h5 class="p-b-12">
+                                        <a href="#" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+											المضيق: مركز الإصطياف المضيق
+										</a>
+                                    </h5>
+                                    <div class="cl8 p-b-18">
+                                    </div>
+                                    <p class="f1-s-1 cl6 p-b-24">
+
+                                    </p>
+
+                                    <a href="#" class="f1-s-1 cl9 hov-cl10 trans-03">
+										اقرأ المزيد
+										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+									</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="flex-c-c size-a-13 bo-all-1 bocl11 f1-m-6 cl6 hov-btn1 trans-03">
+							حمل المزيد
+						</a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-4 p-b-50">
+                    <div class="p-l-10 p-rl-0-sr991">
+                        <!-- Banner -->
+                        <div class="flex-c-s">
+                            <a href="#">
+                                <img class="max-w-full" src="images/side-banner.jpg" alt="IMG">
+                            </a>
+                        </div>
+                        <br>
+                        <!-- ---------------------------- -->
+                        <!-- Banner -->
+                        <div class="flex-c-s">
+                            <a href="#">
+                                <img class="max-w-full" src="images/side-banner3.jpg" alt="IMG">
+                            </a>
+                        </div>
+                        <br>
+                        <!-- Banner -->
+                        <div class="flex-c-s">
+                            <a href="#">
+                                <img class="max-w-full" src="images/side-banner4.jpg" alt="IMG">
+                            </a>
+                        </div>
+                        <br>
+                        <!-- Banner -->
+                        <div class="flex-c-s">
+                            <a href="#">
+                                <img class="max-w-full" src="images/side-banner5.jpg" alt="IMG">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------------------------------- -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer th:fragment="footer">
+        <!-- ------------------------------------------------------ -->
+        <div class="bg2 p-t-40 p-b-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <a th:href="@{/home.html}">
+                                <img class="max-s-full" src="images/icons/logoicon.png" alt="LOGO">
+                            </a>
+                        </div>
+                        <div>
+                            <p class="f1-s-1 cl11 p-b-16">
+                                تشكل المؤسسة المحمدية دعامة أساسية للنهوض بالأوضاع الاجتماعية للعاملين بقطاعي العدل والسجون، من خلال توفيرها لخدمات اجتماعية أساسية وأنشطة متنوعة. ولكي تقوم بالدور المنوط بها تعمل المؤسسة جاهدة على توفير الموارد المالية الضرورية، والموارد البشرية المتخصصة
+                                في مجال التسيير، ونهج أساليب التدبير الحديثة. حتى تتمكن من تنفيذ برامجها الاجتماعية المسطرة في الاستراتيجية العامة الموضوعة من قبل أجهزتها المؤسساتية، فتربح الرهان...
+                            </p>
+                            <p class="f1-s-1 cl11 p-b-16" style="color:#17b978;">
+                                للإجابة عل تساؤلاتكم : 96 43 72 537 212
+                            </p>
+                            <p class="f1-s-1 cl11 p-b-16" style="color:#17b978;">
+                                8 شارع مولاي يوسف - الرباط | الهاتف : 96 43 72 537 212
+                            </p>
+                            <p class="f1-s-1 cl11 p-b-16" style="color:#17b978;">
+                                فاكس : 10 34 20 37 5 212
+                            </p>
+                            <div class="p-t-15">
+                                <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                                    <span class="fab fa-facebook-f"></span>
+                                </a>
+                                <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                                    <span class="fab fa-twitter"></span>
+                                </a>
+                                <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                                    <span class="fab fa-pinterest-p"></span>
+                                </a>
+                                <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                                    <span class="fab fa-vimeo-v"></span>
+                                </a>
+
+                                <a href="#" class="fs-18 cl11 hov-cl10 trans-03 m-r-8">
+                                    <span class="fab fa-youtube"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <h5 class="f1-m-7 cl0">
+                                المشورات
+                            </h5>
+                        </div>
+                        <ul>
+                            <li class="flex-wr-sb-s p-b-20">
+                                <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                    <img src="images/maktaba/1.jpg" alt="IMG">
+                                </a>
+                                <div class="size-w-5">
+                                    <h6 class="p-b-5">
+                                        <a th:href="@{/publication2.html}" class="f1-s-5 cl11 hov-cl10 trans-03">
+										مناشير	
+										</a>
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="flex-wr-sb-s p-b-20">
+                                <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                    <img src="images/maktaba/pub.jpg" alt="IMG">
+                                </a>
+
+                                <div class="size-w-5">
+                                    <h6 class="p-b-5">
+                                        <a th:href="@{/publication3.html}" class="f1-s-5 cl11 hov-cl10 trans-03">
+											إعلانات
+										</a>
+                                    </h6>
+                                </div>
+                            </li>
+
+                            <li class="flex-wr-sb-s p-b-20">
+                                <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                    <img src="images/maktaba/q.jpg" alt="IMG">
+                                </a>
+
+                                <div class="size-w-5">
+                                    <h6 class="p-b-5">
+                                        <a th:href="@{/publication4.html}" class="f1-s-5 cl11 hov-cl10 trans-03">
+											تساؤلات
+										</a>
+                                    </h6>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <h5 class="f1-m-7 cl0">
+                                خدماتنا
+                            </h5>
+                        </div>
+                        <ul class="m-t--12">
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="#{/santé.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									الصحة
+								</a>
+                            </li>
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="@{/hebergem.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									السكن
+								</a>
+                            </li>
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="@{/transport1.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									النقل
+								</a>
+                            </li>
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="@{/centre-été.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									الإصطياف
+								</a>
+                            </li>
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="@{/préts1.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									القرض
+								</a>
+                            </li>
+                            <li class="how-bor1 p-rl-5 p-tb-10">
+                                <a th:href="@{/bourse.html}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+									المنح
+								</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg11">
+            <div class="container size-h-4 flex-c-c p-tb-15">
+                <span class="f1-s-1 cl0 txt-center">
+					
+					<a href="#" class="f1-s-1 cl10 hov-link1">
+                    <script>document.write(new Date().getFullYear());</script>: المؤسسة المحمدية للأعمال الإجتماعية لقضاة وموظفي العدل <i class="fa " aria-hidden="true"></i><a href="#" target="_blank"></a>
+				</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+    <!-- Modal Video 01-->
+    <div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document" data-dismiss="modal">
+            <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+            <div class="wrap-video-mo-01">
+                <div class="video-mo-01">
+                    <iframe src="https://www.youtube.com/watch?v=FgXT0RzKBrc" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+     <script src="js/jquery.jConveyorTicker.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/service-animation.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('.js-conveyor-1').jConveyorTicker();
+      });
+    </script>
+
+</body>
+
+</html>

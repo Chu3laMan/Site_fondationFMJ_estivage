@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>المنشورات : شكاوي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+       <link rel="icon" type="image/png" th:href="@{/images/icons/logoicon.png}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition" onload=display_ct();>
+
+    <!-- Header -->
+    <header th:replace="home :: header">
+
+        <!-- -------------------  HEADER END  ------------------------------------->
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+          
+             <div class="f2-s-1 news p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+                <span class="text-uppercase cll2 p-r-8"> 
+			   		<div class="f2-s-1 p-r-30 m-tb-6">
+				<a th:href="@{/home.html}" class="cl9" style="font-size:15px;font-family: KacstTitle;margin-right: -32px;">المنشورات</a>
+				<i class="arrow left" style="font-size:15px;font-family: KacstTitle;"> &#62 </i>
+				 <span style="font-size:15px;font-family: KacstTitle;">
+					شكاوي
+				</span>
+            </div>
+            </span>
+        </div>
+
+            <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="بحث">
+                <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+					<i class="zmdi zmdi-search"></i>
+				</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="befor-body container"></div>
+    <section class="bg0 p-b-140 p-t-10">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8 p-b-30">
+                    <div class="p-r-10 p-r-0-sr991">
+                        <!-- Blog Detail -->
+                        <div class="p-b-70">
+                            <h2 style="color:black;font-family:KacstTitle; font-size:32px;margin-bottom: 20px;">
+                                شكاوي
+                            </h2>
+                            <div>
+                            <h4 class="f1-l-4 cl3 p-b-12">
+                                إترك شكاية
+                            </h4>
+
+                            <p class="f1-s-13 cl8 p-b-40">
+                                سنحافظ على خصوصية بريدك الإلكتروني . المرجو تعبئة كل الخانت
+                            </p>
+                            </div>
+                             
+                         <form action="/addChikaya" method="POST">
+                            <input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="nom" placeholder="الإسم*">
+
+                            <input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="البريد الإلكتروني*">
+
+                            <input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="sujet" placeholder="موضوع الشكاية">
+
+                            <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="contenu" placeholder="محتوى الشكاية">
+                            </textarea>
+                            <button class="size-a-20 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-20" type="submit">
+								ارسل
+							</button>
+                        </form>
+                          <br>   
+                             
+                            <!-- Share -->
+                            <div class="flex-s-s">
+                                <span class="f1-s-12 cl5 p-t-1 m-r-15">
+									شارك على:
+								</span>
+
+                                <div class="flex-wr-s-s size-w-0">
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-facebook-f m-r-7"></i> Facebook
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-twitter m-r-7"></i> Twitter
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-google-plus-g m-r-7"></i> Google+
+                                    </a>
+
+                                    <a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+                                        <i class="fab fa-pinterest-p m-r-7"></i> Pinterest
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-10 col-lg-4 p-b-30">
+                    <div class="p-l-10 p-rl-0-sr991 p-t-70">
+                        <!-- Category -->
+                        <div class="p-b-60">
+                            <div class="how2 how how2-cl4 flex-s-c">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									المنشوراات
+								  </strong>
+                                </h3>
+                            </div>
+
+                            <ul class="p-t-35">
+                                <li class="how-bor3 p-rl-4 li-side" style="background-color: #eeeeee">
+                                    <a th:href="@{/publication1.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										طلبات العروض
+									</a>
+                                </li>
+
+                                <li class="how-bor3 p-rl-4 li-side" style="background-color: #eeeeee">
+                                    <a th:href="@{/publication2.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										مناشير
+									</a>
+                                </li>
+
+                                <li class="how-bor3 p-rl-4 li-side" style="background-color: #eeeeee">
+                                    <a th:href="@{/publication3.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+									 إعلانات	
+									</a>
+                                </li>
+
+                                <li class="how-bor3 p-rl-4 li-side" style="background-color: #eeeeee">
+                                    <a th:href="@{/publication4.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										تساؤلات
+									</a>
+                                </li>
+
+                                <li class="how-bor3 p-rl-4 li-side" style="background-color: #eeeeee">
+                                    <a th:href="@{/publication5.html}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+										شكاوي
+									</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tag -->
+                        <div>
+                            <div class="how2 how how2-cl4 flex-s-c m-b-30">
+                                <h3 class="f1-m-2 cl3 tab01-title">
+                                    <strong>
+									خدماتنا
+								 </strong>
+                                </h3>
+                            </div>
+
+                            <div class="flex-wr-s-s m-rl--5">
+                             <a th:href="@{/hebergem.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									السكن
+								</a>
+
+                                <a th:href="@{/santé.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									الصحة
+								</a>
+
+                                <a th:href="@{/transport1.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									النقل
+								</a>
+
+                                <a th:href="@{/préts1.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									القرض
+								</a>
+
+                                <a th:href="@{/bourse.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									المنح
+								</a>
+
+                                <a th:href="@{/3omra.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									العمرة
+								</a>
+
+                                <a th:href="@{/assurances.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									التأمين
+								</a>
+
+                                <a th:href="@{/centre-été.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									الإصطياف
+								</a>
+                                <a th:href="@{/divertissement1.html}" class="flex-c-c tags-tf size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5" style="background-color:  #efd8c2">
+									الترفيه
+								</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer th:replace="home :: footer">
+
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+        </span>
+    </div>
+
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="/savemenchor" method="post" enctype="multipart/form-data">
+ <input type="file" name="file">
+ <br>
+ <input type="text"  name="menchor">
+ <input type="submit" value="submit">
+ </form>
+ 
+ <h1>clik me to see the file uploaded</h1>
+ <div th:each="mench : ${menchor}" >
+ <a th:href="@{'/files/docs/'+${mench.attachmentURL}}">clik me</a>
+ </div>
+</body>
+</html>
