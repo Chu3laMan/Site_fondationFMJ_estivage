@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/profile1", method = RequestMethod.GET)
-    public String getLoggedUsersFromSessionRegistryWithinProfile(final Locale locale, final Model model) {
+    public String getLoggedUsersFromSessionRegistryWithinPr(final Locale locale, final Model model) {
         model.addAttribute("users", userService.getUsersFromSessionRegistry());
         return "user/profile1";
     }
